@@ -7,7 +7,7 @@ const Home: React.FC = () => {
     <div className={styles.container}>
       はこだて未来展2024
       <img src={logo} className={styles.logo} alt="logo" />
-      Comming Soon
+      Coming Soon
       <PageLink href="https://twitter.com/miraiten2024" newTab>
         最新情報はXで公開中
       </PageLink>
