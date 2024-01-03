@@ -66,8 +66,10 @@ const buildRelativeUrl = (
   pathname: string,
   searchParams: string,
   hash: string
-) => {
-  return pathname + (searchParams ? '?' + searchParams : '') + hash
-}
+) =>
+  import.meta.env.VITE_PUBLIC_URL +
+  pathname +
+  (searchParams ? '?' + searchParams : '') +
+  hash
 
 export default InitPage
