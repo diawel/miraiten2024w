@@ -6,7 +6,7 @@ import ResponsiveFrame from '../../components/ResponsiveFrame'
 import Abstract from './Abstract'
 import ArticleList from '../../components/ArticleList'
 
-const AsobiArticles: React.FC = () => {
+const CrowdfundingArticles: React.FC = () => {
   const { articles } = useLoaderData() as AsobiArticlesLoaderData
   return (
     <>
@@ -28,4 +28,4 @@ const AsobiArticles: React.FC = () => {
   )
 }
 
-export default AsobiArticles
+export default CrowdfundingArticles

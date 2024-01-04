@@ -4,8 +4,10 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home/index.tsx'
 import Error from './pages/Error/index.tsx'
-import AsobiArticles from './pages/AsobiArticles/index.tsx'
+import AsobiArticles from './pages/AsobiArticles'
 import { asobiArticlesLoader } from './pages/AsobiArticles/loader.ts'
+import CrowdfundingArticles from './pages/CrowdfundingArticles/index.tsx'
+import { crowdfundingArticlesLoader } from './pages/CrowdfundingArticles/loader.ts'
 
 const router = createBrowserRouter(
   [
@@ -25,7 +27,8 @@ const router = createBrowserRouter(
     },
     {
       path: '/crowdfunding',
-      element: <Home />,
+      element: <CrowdfundingArticles />,
+      loader: crowdfundingArticlesLoader,
     },
 
     {
