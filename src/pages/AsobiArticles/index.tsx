@@ -5,11 +5,13 @@ import { AsobiArticlesLoaderData } from './loader'
 import ResponsiveFrame from '../../components/ResponsiveFrame'
 import Abstract from './Abstract'
 import ArticleList from '../../components/ArticleList'
+import Footer from '../../components/Footer'
+import { color } from '../../utils/constants'
 
 const AsobiArticles: React.FC = () => {
   const { articles } = useLoaderData() as AsobiArticlesLoaderData
   return (
-    <>
+    <div>
       <InitPage />
       <ResponsiveFrame
         abstractSection={<Abstract />}
@@ -21,10 +23,12 @@ const AsobiArticles: React.FC = () => {
               description: article.shortDescription,
               thumbnail: article.thumbnail,
             }))}
+            api="asobi"
           />
         }
       />
-    </>
+      <Footer themeColor={color.pink} />
+    </div>
   )
 }
 

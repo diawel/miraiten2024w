@@ -3,7 +3,7 @@ export type Slide = {
   type: 'canva' | 'speakerdeck'
 }
 
-export type AsobiLoaderData = {
+export type CrowdfundingLoaderData = {
   article: {
     id: string
     createdAt: string
@@ -18,14 +18,17 @@ export type AsobiLoaderData = {
     description?: string
     slide?: Slide
     body?: string
-    poster?: string
-    posterDescription?: string
+    webCapture?: string
+    webDescription?: string
+    webUrl?: string
   } | null
 }
 
-export const asobiLoader = async (id: string): Promise<AsobiLoaderData> => {
+export const crowdfundingLoader = async (
+  id: string
+): Promise<CrowdfundingLoaderData> => {
   const articles = await fetch(
-    import.meta.env.BASE_URL + `/cms/articles/asobi/${id}.json`,
+    import.meta.env.BASE_URL + `/cms/articles/crowdfunding/${id}.json`,
     {
       cache: 'no-cache',
     }

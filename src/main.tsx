@@ -10,6 +10,8 @@ import CrowdfundingArticles from './pages/CrowdfundingArticles/index.tsx'
 import { crowdfundingArticlesLoader } from './pages/CrowdfundingArticles/loader.ts'
 import Asobi from './pages/Asobi/index.tsx'
 import { asobiLoader } from './pages/Asobi/loader.ts'
+import Crowdfunding from './pages/Crowdfunding/index.tsx'
+import { crowdfundingLoader } from './pages/Crowdfunding/loader.ts'
 
 const router = createBrowserRouter(
   [
@@ -38,7 +40,10 @@ const router = createBrowserRouter(
 
     {
       path: '/crowdfunding/:id',
-      element: <Home />,
+      element: <Crowdfunding />,
+      loader: async ({ params }) => {
+        return crowdfundingLoader(params.id ?? '')
+      },
     },
   ],
   { basename: import.meta.env.BASE_URL }

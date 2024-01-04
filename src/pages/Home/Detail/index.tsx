@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom'
 import * as styles from './index.css'
+import furtherDetailButton from '../../../assets/furtherDetailButton.svg'
 
 const Detail: React.FC = () => {
   return (
@@ -25,12 +27,22 @@ const Detail: React.FC = () => {
           </p>
           <p>この講義では、遊びの分析を行うことで、なぜその遊びは楽しいと</p>
         </div>
+        <div className={styles.buttonContainer}>
+          <Link to="/asobi">
+            <img src={furtherDetailButton} />
+          </Link>
+        </div>
         <h3>人に寄り添うサービス・アイテムの提案</h3>
         <div className={styles.paragraph}>
           <p>
             世界には、鬼ごっこや缶蹴り、カードゲームなどたくさんの遊びが存在します。
           </p>
           <p>この講義では、遊びの分析を行うことで、なぜその遊びは楽しいと</p>
+        </div>
+        <div className={styles.buttonContainer}>
+          <Link to="/crowdfunding">
+            <img src={furtherDetailButton} />
+          </Link>
         </div>
       </section>
     </div>

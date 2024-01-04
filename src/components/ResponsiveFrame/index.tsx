@@ -11,8 +11,8 @@ const ResponsiveFrame: React.FC<ResponsiveFrameProps> = ({
 }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.section}>{abstractSection}</div>
-      <div className={styles.section}>{detailSection}</div>
+      <div className={styles.abstractSection}>{abstractSection}</div>
+      <div className={styles.detailSection}>{detailSection}</div>
     </div>
   )
 }

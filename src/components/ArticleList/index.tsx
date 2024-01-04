@@ -9,13 +9,14 @@ export type ArticleListProps = {
     description: string
     thumbnail: string
   }[]
+  api: string
 }
 
-const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
+const ArticleList: React.FC<ArticleListProps> = ({ articles, api }) => {
   return (
     <div className={styles.container}>
       {articles.map((article) => (
-        <Link to={`/asobi/${article.id}`} key={article.id}>
+        <Link to={`/${api}/${article.id}`} key={article.id}>
           <ArticleCard {...article} />
         </Link>
       ))}

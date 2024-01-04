@@ -5,9 +5,11 @@ export const container = style({
   height: '100vh',
   display: 'flex',
   flexDirection: 'column',
+  alignItems: 'center',
   justifyContent: 'center',
 })
 
 export const kv = style({
   width: '100%',
+  maxWidth: 320,
 })

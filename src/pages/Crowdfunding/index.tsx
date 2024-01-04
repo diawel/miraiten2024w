@@ -1,5 +1,4 @@
 import { useLoaderData } from 'react-router-dom'
-import { AsobiLoaderData } from './loader'
 import InitPage from '../../components/InitPage'
 import ResponsiveFrame from '../../components/ResponsiveFrame'
 import Abstract from './Abstract'
@@ -7,9 +6,10 @@ import Detail from './Detail'
 import Footer from '../../components/Footer'
 import { color } from '../../utils/constants'
 import Error from '../Error'
+import { CrowdfundingLoaderData } from './loader'
 
-const Asobi: React.FC = () => {
-  const { article } = useLoaderData() as AsobiLoaderData
+const Crowdfunding: React.FC = () => {
+  const { article } = useLoaderData() as CrowdfundingLoaderData
 
   if (!article) return <Error />
   return (
@@ -19,9 +19,9 @@ const Asobi: React.FC = () => {
         abstractSection={<Abstract {...article} />}
         detailSection={<Detail {...article} />}
       />
-      <Footer themeColor={color.pink} />
+      <Footer themeColor={color.green} />
     </div>
   )
 }
 
-export default Asobi
+export default Crowdfunding

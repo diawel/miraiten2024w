@@ -2,10 +2,10 @@ import { style } from '@vanilla-extract/css'
 import { margin } from '../../../utils/constants'
 
 export const container = style({
-  padding: `${margin.section}px 0`,
   display: 'flex',
   flexDirection: 'column',
   gap: margin.section,
+  padding: `${margin.block}px 0 ${margin.section}px`,
   width: '100%',
   height: 'fit-content',
 })
@@ -13,20 +13,27 @@ export const container = style({
 export const section = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: margin.siderail,
-  width: '100%',
+  gap: margin.block,
 })
 
-export const paragraph = style({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: margin.paragraph,
-  width: '100%',
+export const title = style({})
+
+export const description = style({
   textAlign: 'justify',
 })
 
-export const buttonContainer = style({
-  display: 'flex',
-  justifyContent: 'center',
+export const slide = style({
   width: '100%',
+  aspectRatio: '16 / 9',
+  border: 'none',
+})
+
+export const body = style({
+  textAlign: 'justify',
+})
+
+export const poster = style({
+  width: '100%',
+  aspectRatio: '1',
+  objectFit: 'contain',
 })
