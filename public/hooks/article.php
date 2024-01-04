@@ -92,6 +92,6 @@ foreach ($list['contents'] as $article) {
 }
 
 file_put_contents(
-  '../cms/articles/' . $data['api'] . '/list.json',
+  $base_path . 'list.json',
   json_encode($articles)
 );
