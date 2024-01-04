@@ -1,8 +1,5 @@
 <?php
-if ($_GET['key'] != 'Saq_MTMujNbEnKkh9bJ_EUEV') {
-  http_response_code(403);
-  exit;
-}
+require './auth.php';
 require_once './filepath.php';
 
 $data = json_decode(file_get_contents('php://input'), true);
