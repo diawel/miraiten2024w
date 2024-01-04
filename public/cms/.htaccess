@@ -4,4 +4,5 @@
   order deny,allow
   deny from all
   allow from env=ref_ok
+  Header set Access-Control-Allow-Origin %{HTTP_HOST} env=ref_ok
 </IfModule>

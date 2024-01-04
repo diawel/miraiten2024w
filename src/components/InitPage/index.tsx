@@ -67,7 +67,7 @@ const buildRelativeUrl = (
   searchParams: string,
   hash: string
 ) =>
-  import.meta.env.VITE_PUBLIC_URL +
+  import.meta.env.BASE_URL +
   pathname +
   (searchParams ? '?' + searchParams : '') +
   hash

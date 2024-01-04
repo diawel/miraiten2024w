@@ -2,8 +2,12 @@ import * as styles from './index.css'
 import logo from '../../assets/logo.svg'
 import PageLink from '../../components/PageLink'
 import InitPage from '../../components/InitPage'
+import { useLoaderData } from 'react-router-dom'
+import { AsobiArticlesLoaderData } from './loader'
 
-const Home: React.FC = () => {
+const AsobiArticles: React.FC = () => {
+  const { articles } = useLoaderData() as AsobiArticlesLoaderData
+  console.log(articles)
   return (
     <div className={styles.container}>
       <InitPage />
@@ -17,4 +21,4 @@ const Home: React.FC = () => {
   )
 }
 
-export default Home
+export default AsobiArticles
