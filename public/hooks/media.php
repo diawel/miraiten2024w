@@ -1,6 +1,6 @@
 <?php
-require './auth.php';
-require_once './filepath.php';
+require '../utils/auth.php';
+require_once '../utils/filepath.php';
 
 $data = json_decode(file_get_contents('php://input'), true);
 $base_path = '../cms/medias/';
