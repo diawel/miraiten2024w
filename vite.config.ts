@@ -11,7 +11,6 @@ export default ({ mode }) => {
     base: process.env.VITE_PUBLIC_URL,
     server: {
       proxy: {
-        '/api': 'https://fundesign.jp/miraiten2024w',
         '/cms': 'https://fundesign.jp/miraiten2024w',
       },
     },
