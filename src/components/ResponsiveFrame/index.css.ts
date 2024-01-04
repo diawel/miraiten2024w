@@ -22,11 +22,12 @@ export const section = style({
   display: 'flex',
   padding: `0 ${margin.siderail}px`,
   width: '100%',
-  maxWidth: 440,
+  maxWidth: 640,
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
       height: '100%',
       overflowY: 'auto',
+      maxWidth: 440,
     },
   },
 })

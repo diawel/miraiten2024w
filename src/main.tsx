@@ -8,6 +8,8 @@ import AsobiArticles from './pages/AsobiArticles'
 import { asobiArticlesLoader } from './pages/AsobiArticles/loader.ts'
 import CrowdfundingArticles from './pages/CrowdfundingArticles/index.tsx'
 import { crowdfundingArticlesLoader } from './pages/CrowdfundingArticles/loader.ts'
+import Asobi from './pages/Asobi/index.tsx'
+import { asobiLoader } from './pages/Asobi/loader.ts'
 
 const router = createBrowserRouter(
   [
@@ -23,7 +25,10 @@ const router = createBrowserRouter(
     },
     {
       path: '/asobi/:id',
-      element: <Home />,
+      element: <Asobi />,
+      loader: async ({ params }) => {
+        return asobiLoader(params.id ?? '')
+      },
     },
     {
       path: '/crowdfunding',
