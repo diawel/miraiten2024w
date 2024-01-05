@@ -1,7 +1,6 @@
 import Footer from '../../components/Footer'
 import InitPage from '../../components/InitPage'
 import ResponsiveFrame from '../../components/ResponsiveFrame'
-import { color } from '../../utils/constants'
 import Detail from './Detail'
 import Kv from './Kv'
 
@@ -10,7 +9,7 @@ const Home: React.FC = () => {
     <div>
       <InitPage />
       <ResponsiveFrame abstractSection={<Kv />} detailSection={<Detail />} />
-      <Footer themeColor={color.orange} />
+      <Footer />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { ScrollRestoration, useLocation } from 'react-router-dom'
 import { color } from '../../utils/constants'
 
 export type InitPageProps = {
@@ -14,10 +14,6 @@ const InitPage: React.FC<InitPageProps> = ({
   pageTitle,
 }) => {
   const location = useLocation()
-
-  useEffect(() => {
-    window.scroll(0, 0)
-  }, [])
 
   useEffect(() => {
     document
@@ -59,7 +55,7 @@ const InitPage: React.FC<InitPageProps> = ({
     }
   }, [notFound, location])
 
-  return <></>
+  return <ScrollRestoration />
 }
 
 const buildRelativeUrl = (

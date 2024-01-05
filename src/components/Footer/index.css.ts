@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { margin } from '../../utils/constants'
+import { color, margin } from '../../utils/constants'
 
 export const container = style({
   display: 'flex',
@@ -8,6 +8,7 @@ export const container = style({
   height: 128,
   width: '100%',
   padding: margin.siderail,
+  backgroundColor: color.yellow,
 })
 
 export const logo = style({

@@ -6,18 +6,17 @@ import ResponsiveFrame from '../../components/ResponsiveFrame'
 import Abstract from './Abstract'
 import ArticleList from '../../components/ArticleList'
 import Footer from '../../components/Footer'
-import { color } from '../../utils/constants'
 
 const CrowdfundingArticles: React.FC = () => {
   const { articles } = useLoaderData() as AsobiArticlesLoaderData
   return (
     <div>
-      <InitPage />
+      <InitPage pageTitle="人に寄り添うサービス・アイテムの提案" />
       <ResponsiveFrame
         abstractSection={<Abstract />}
         detailSection={<ArticleList {...{ articles }} api="crowdfunding" />}
       />
-      <Footer themeColor={color.green} />
+      <Footer />
     </div>
   )
 }

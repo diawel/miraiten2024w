@@ -6,18 +6,17 @@ import ResponsiveFrame from '../../components/ResponsiveFrame'
 import Abstract from './Abstract'
 import ArticleList from '../../components/ArticleList'
 import Footer from '../../components/Footer'
-import { color } from '../../utils/constants'
 
 const AsobiArticles: React.FC = () => {
   const { articles } = useLoaderData() as AsobiArticlesLoaderData
   return (
     <div>
-      <InitPage />
+      <InitPage pageTitle="新しい遊びの提案" />
       <ResponsiveFrame
         abstractSection={<Abstract />}
         detailSection={<ArticleList {...{ articles }} api="asobi" />}
       />
-      <Footer themeColor={color.pink} />
+      <Footer />
     </div>
   )
 }
