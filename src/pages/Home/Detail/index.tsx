@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
 import * as styles from './index.css'
 import furtherDetailButton from '../../../assets/furtherDetailButton.svg'
 import Paragraph from '../../../components/Paragraph'
+import PageLink from '../../../components/PageLink'
 
 const Detail: React.FC = () => {
   return (
@@ -26,9 +26,9 @@ const Detail: React.FC = () => {
           ]}
         />
         <div className={styles.buttonContainer}>
-          <Link to="/asobi">
+          <PageLink href="/asobi">
             <img src={furtherDetailButton} />
-          </Link>
+          </PageLink>
         </div>
         <h3>人に寄り添うサービス・アイテムの提案</h3>
         <Paragraph
@@ -38,9 +38,9 @@ const Detail: React.FC = () => {
           ]}
         />
         <div className={styles.buttonContainer}>
-          <Link to="/crowdfunding">
+          <PageLink href="/crowdfunding">
             <img src={furtherDetailButton} />
-          </Link>
+          </PageLink>
         </div>
       </section>
     </div>

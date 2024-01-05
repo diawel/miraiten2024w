@@ -18,7 +18,7 @@ const InitPage: React.FC<InitPageProps> = ({
   useEffect(() => {
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute('content', themeColor || color.primaryWhite)
+      ?.setAttribute('content', themeColor || color.yellow)
   }, [themeColor])
 
   useEffect(() => {

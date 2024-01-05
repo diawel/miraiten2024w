@@ -8,7 +8,9 @@ const Error: React.FC = () => {
       <InitPage notFound={true} pageTitle="404 Not Found" />
       <div>404 Not Found</div>
       <div>お探しのページは見つかりませんでした。</div>
-      <PageLink href="/">トップページに戻る</PageLink>
+      <PageLink href="/" underline>
+        トップページに戻る
+      </PageLink>
     </div>
   )
 }

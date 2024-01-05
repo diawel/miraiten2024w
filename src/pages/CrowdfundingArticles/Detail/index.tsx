@@ -12,7 +12,7 @@ const Detail: React.FC<DetailProps> = ({ articles }) => {
     <div className={styles.container}>
       <ArticleList {...{ articles }} api="crowdfunding" />
       <div className={styles.buttonContainer}>
-        <PageLink href="https://docs.google.com/forms" newTab underline={false}>
+        <PageLink href="https://docs.google.com/forms" newTab>
           <img src={voteButton} />
         </PageLink>
       </div>

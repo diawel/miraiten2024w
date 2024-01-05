@@ -12,7 +12,7 @@ const PageLink: React.FC<PageLinkProps> = ({
   href,
   children,
   newTab,
-  underline = true,
+  underline,
 }) => {
   const commonProps = {
     className: styles.link,

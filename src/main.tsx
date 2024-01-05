@@ -15,51 +15,61 @@ import {
   crowdfundingDraftLoader,
   crowdfundingLoader,
 } from './pages/Crowdfunding/loader.ts'
+import GlobalLayout from './pages/GlobalLayout/index.tsx'
 
 const router = createBrowserRouter(
   [
     {
       path: '/',
-      element: <Home />,
+      element: <GlobalLayout />,
       errorElement: <Error />,
-    },
-    {
-      path: '/asobi',
-      element: <AsobiArticles />,
-      loader: asobiArticlesLoader,
-    },
-    {
-      path: '/asobi/:id',
-      element: <Asobi />,
-      loader: async ({ params }) => {
-        return asobiLoader(params.id ?? '')
-      },
-    },
-    {
-      path: '/asobi/draft/:id/:draftKey',
-      element: <Asobi />,
-      loader: async ({ params }) => {
-        return asobiDraftLoader(params.id ?? '', params.draftKey ?? '')
-      },
-    },
-    {
-      path: '/crowdfunding',
-      element: <CrowdfundingArticles />,
-      loader: crowdfundingArticlesLoader,
-    },
-    {
-      path: '/crowdfunding/:id',
-      element: <Crowdfunding />,
-      loader: async ({ params }) => {
-        return crowdfundingLoader(params.id ?? '')
-      },
-    },
-    {
-      path: '/crowdfunding/draft/:id/:draftKey',
-      element: <Crowdfunding />,
-      loader: async ({ params }) => {
-        return crowdfundingDraftLoader(params.id ?? '', params.draftKey ?? '')
-      },
+      children: [
+        {
+          path: '/',
+          element: <Home />,
+        },
+        {
+          path: '/asobi',
+          element: <AsobiArticles />,
+          loader: asobiArticlesLoader,
+        },
+        {
+          path: '/asobi/:id',
+          element: <Asobi />,
+          loader: async ({ params }) => {
+            return asobiLoader(params.id ?? '')
+          },
+        },
+        {
+          path: '/asobi/draft/:id/:draftKey',
+          element: <Asobi />,
+          loader: async ({ params }) => {
+            return asobiDraftLoader(params.id ?? '', params.draftKey ?? '')
+          },
+        },
+        {
+          path: '/crowdfunding',
+          element: <CrowdfundingArticles />,
+          loader: crowdfundingArticlesLoader,
+        },
+        {
+          path: '/crowdfunding/:id',
+          element: <Crowdfunding />,
+          loader: async ({ params }) => {
+            return crowdfundingLoader(params.id ?? '')
+          },
+        },
+        {
+          path: '/crowdfunding/draft/:id/:draftKey',
+          element: <Crowdfunding />,
+          loader: async ({ params }) => {
+            return crowdfundingDraftLoader(
+              params.id ?? '',
+              params.draftKey ?? ''
+            )
+          },
+        },
+      ],
     },
   ],
   { basename: import.meta.env.BASE_URL }

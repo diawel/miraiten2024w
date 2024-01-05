@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
 import ArticleCard from '../ArticleCard'
 import * as styles from './index.css'
+import PageLink from '../PageLink'
 
 export type ArticleAbstract = {
   id: string
@@ -18,9 +18,9 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles, api }) => {
   return (
     <div className={styles.container}>
       {articles.map((article) => (
-        <Link to={`/${api}/${article.id}`} key={article.id}>
+        <PageLink href={`/${api}/${article.id}`} key={article.id}>
           <ArticleCard {...article} />
-        </Link>
+        </PageLink>
       ))}
     </div>
   )
