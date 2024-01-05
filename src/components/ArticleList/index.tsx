@@ -2,13 +2,15 @@ import { Link } from 'react-router-dom'
 import ArticleCard from '../ArticleCard'
 import * as styles from './index.css'
 
+export type ArticleAbstract = {
+  id: string
+  title: string
+  shortDescription: string
+  thumbnail: string
+}
+
 export type ArticleListProps = {
-  articles: {
-    id: string
-    title: string
-    shortDescription: string
-    thumbnail: string
-  }[]
+  articles: ArticleAbstract[]
   api: 'asobi' | 'crowdfunding'
 }
 

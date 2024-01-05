@@ -7,5 +7,4 @@ export const container = style({
   gap: margin.block,
   width: '100%',
   height: 'fit-content',
-  padding: `${margin.section}px 0`,
 })
