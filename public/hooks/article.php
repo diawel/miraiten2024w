@@ -3,15 +3,17 @@ require '../utils/auth.php';
 require_once '../utils/filepath.php';
 require_once '../utils/article.php';
 
+$cms_path = '../cms/';
+
 $data = json_decode(file_get_contents('php://input'), true);
-$base_path = '../cms/articles/' . $data['api'] . '/';
-$media_base_path = '/miraiten2024w/cms/medias/';
+$article_base_path = $cms_path . 'articles/' . $data['api'] . '/';
+$media_base_path = $cms_path . 'medias/';
 
 if (
   $data['contents']['old'] &&
   $data['contents']['old']['publishValue']
 )
-  unlink($base_path . $data['contents']['old']['id'] . '.json');
+  unlink($article_base_path . $data['contents']['old']['id'] . '.json');
 if (
   $data['contents']['new'] &&
   $data['contents']['new']['publishValue']
@@ -19,7 +21,7 @@ if (
   $article = read_article($data['contents']['new']['publishValue']);
 
   file_put_contents(
-    $base_path . $data['contents']['new']['id'] . '.json',
+    $article_base_path . $data['contents']['new']['id'] . '.json',
     json_encode($article)
   );
 }
@@ -47,6 +49,6 @@ foreach ($list['contents'] as $article) {
 }
 
 file_put_contents(
-  $base_path . 'list.json',
+  $article_base_path . 'list.json',
   json_encode($articles)
 );

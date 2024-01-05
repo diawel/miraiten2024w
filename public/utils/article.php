@@ -1,10 +1,11 @@
 <?php
 require_once 'filepath.php';
 
-$media_base_path = '/miraiten2024w/cms/medias/';
+$cms_path = '../cms/';
 
 function read_article($article) {
-  global $media_base_path;
+  global $cms_path;
+  $media_base_path = $cms_path . 'medias/';
 
   if (isset($article['thumbnail']))
     $article['thumbnail'] = $media_base_path . gen_file_name($article['thumbnail']['url']);
