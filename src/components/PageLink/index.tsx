@@ -5,15 +5,27 @@ export type PageLinkProps = {
   href: string
   children: React.ReactNode
   newTab?: boolean
+  underline?: boolean
 }
 
-const PageLink: React.FC<PageLinkProps> = ({ href, children, newTab }) => {
+const PageLink: React.FC<PageLinkProps> = ({
+  href,
+  children,
+  newTab,
+  underline = true,
+}) => {
+  const commonProps = {
+    className: styles.link,
+    style: {
+      textDecoration: underline ? 'underline' : 'none',
+    },
+  }
   if (newTab)
     return (
       <a
-        className={styles.link}
         target="_blank"
         rel="noopener noreferrer"
+        {...commonProps}
         {...{
           href,
         }}
@@ -22,7 +34,7 @@ const PageLink: React.FC<PageLinkProps> = ({ href, children, newTab }) => {
       </a>
     )
   return (
-    <Link className={styles.link} {...{ to: href }}>
+    <Link {...commonProps} {...{ to: href }}>
       {children}
     </Link>
   )
