@@ -38,3 +38,20 @@ export const asobiLoader = async (id: string): Promise<AsobiLoaderData> => {
     article: await articles.json(),
   }
 }
+
+export const asobiDraftLoader = async (
+  id: string,
+  draftKey: string
+): Promise<AsobiLoaderData> => {
+  const articles = await fetch(
+    import.meta.env.BASE_URL +
+      `/cms/articles/asobi/draft.php?id=${id}&draftKey=${draftKey}`,
+    {
+      cache: 'no-cache',
+    }
+  )
+
+  return {
+    article: await articles.json(),
+  }
+}

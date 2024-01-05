@@ -9,9 +9,12 @@ import { asobiArticlesLoader } from './pages/AsobiArticles/loader.ts'
 import CrowdfundingArticles from './pages/CrowdfundingArticles/index.tsx'
 import { crowdfundingArticlesLoader } from './pages/CrowdfundingArticles/loader.ts'
 import Asobi from './pages/Asobi/index.tsx'
-import { asobiLoader } from './pages/Asobi/loader.ts'
+import { asobiDraftLoader, asobiLoader } from './pages/Asobi/loader.ts'
 import Crowdfunding from './pages/Crowdfunding/index.tsx'
-import { crowdfundingLoader } from './pages/Crowdfunding/loader.ts'
+import {
+  crowdfundingDraftLoader,
+  crowdfundingLoader,
+} from './pages/Crowdfunding/loader.ts'
 
 const router = createBrowserRouter(
   [
@@ -33,16 +36,29 @@ const router = createBrowserRouter(
       },
     },
     {
+      path: '/asobi/draft/:id/:draftKey',
+      element: <Asobi />,
+      loader: async ({ params }) => {
+        return asobiDraftLoader(params.id ?? '', params.draftKey ?? '')
+      },
+    },
+    {
       path: '/crowdfunding',
       element: <CrowdfundingArticles />,
       loader: crowdfundingArticlesLoader,
     },
-
     {
       path: '/crowdfunding/:id',
       element: <Crowdfunding />,
       loader: async ({ params }) => {
         return crowdfundingLoader(params.id ?? '')
+      },
+    },
+    {
+      path: '/crowdfunding/draft/:id/:draftKey',
+      element: <Crowdfunding />,
+      loader: async ({ params }) => {
+        return crowdfundingDraftLoader(params.id ?? '', params.draftKey ?? '')
       },
     },
   ],

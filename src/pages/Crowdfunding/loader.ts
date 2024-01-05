@@ -41,3 +41,20 @@ export const crowdfundingLoader = async (
     article: await articles.json(),
   }
 }
+
+export const crowdfundingDraftLoader = async (
+  id: string,
+  draftKey: string
+): Promise<CrowdfundingLoaderData> => {
+  const articles = await fetch(
+    import.meta.env.BASE_URL +
+      `/cms/articles/crowdfunding/draft.php?id=${id}&draftKey=${draftKey}`,
+    {
+      cache: 'no-cache',
+    }
+  )
+
+  return {
+    article: await articles.json(),
+  }
+}
