@@ -51,24 +51,24 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
           <style>
             {`
               .${styles.body} {
-                img {
+                & img {
                   width: 100%;
                   height: auto;
                 }
-                figure {
+                & figure {
                   margin: ${margin.block}px 0;
                 }
-                h3, p, ul, ol {
+                & :is(h3, p, ul, ol) {
                   margin: ${margin.paragraph}px 0;
                 }
-                h2 {
+                & h2 {
                   margin: ${margin.section}px 0 ${margin.block}px;
                 }
-                ul > li {
+                & ul > li {
                   margin-left: 1.25em;
                   padding-left: 0.25em;
                 }
-                ol > li {
+                & ol > li {
                   margin-left: 1.5em;
                 }
                 :first-child {
