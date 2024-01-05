@@ -17,14 +17,6 @@ export const section = style({
   width: '100%',
 })
 
-export const paragraph = style({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: margin.paragraph,
-  width: '100%',
-  textAlign: 'justify',
-})
-
 export const buttonContainer = style({
   display: 'flex',
   justifyContent: 'center',

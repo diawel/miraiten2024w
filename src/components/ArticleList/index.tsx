@@ -6,10 +6,10 @@ export type ArticleListProps = {
   articles: {
     id: string
     title: string
-    description: string
+    shortDescription: string
     thumbnail: string
   }[]
-  api: string
+  api: 'asobi' | 'crowdfunding'
 }
 
 const ArticleList: React.FC<ArticleListProps> = ({ articles, api }) => {

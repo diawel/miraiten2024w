@@ -15,17 +15,7 @@ const CrowdfundingArticles: React.FC = () => {
       <InitPage />
       <ResponsiveFrame
         abstractSection={<Abstract />}
-        detailSection={
-          <ArticleList
-            articles={articles.map((article) => ({
-              id: article.id,
-              title: article.title,
-              description: article.shortDescription,
-              thumbnail: article.thumbnail,
-            }))}
-            api="crowdfunding"
-          />
-        }
+        detailSection={<ArticleList {...{ articles }} api="crowdfunding" />}
       />
       <Footer themeColor={color.green} />
     </div>

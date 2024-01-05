@@ -1,7 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { margin } from '../../utils/constants'
-
-const breakpoint = 840
+import { breakpoint, color, margin } from '../../utils/constants'
 
 export const container = style({
   display: 'flex',
@@ -11,36 +9,54 @@ export const container = style({
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
       flexDirection: 'row',
-      justifyContent: 'space-around',
       alignItems: 'flex-start',
-      padding: `0 ${margin.siderail}px`,
     },
   },
 })
 
 export const abstractSection = style({
   display: 'flex',
+  justifyContent: 'center',
   width: '100%',
-  maxWidth: 640,
+  backgroundImage: 'url(/assets/grid.png)',
+  backgroundSize: 20,
+  position: 'sticky',
+  top: 0,
+  '@media': {
+    [`screen and (min-width: ${breakpoint}px)`]: {
+      width: '40%',
+      height: '100vh',
+    },
+  },
+})
+
+export const abstractSectionInner = style({
+  width: '100%',
   padding: `0 ${margin.siderail}px`,
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
-      padding: `0 ${margin.siderail * 2}px`,
-      width: 400,
-      height: '100vh',
-      flexShrink: 0,
+      maxWidth: 480,
     },
   },
 })
 
 export const detailSection = style({
   display: 'flex',
-  padding: `0 ${margin.siderail}px`,
+  justifyContent: 'center',
   width: '100%',
-  maxWidth: 640,
+  backgroundColor: color.primaryWhite,
+  position: 'relative',
+  borderTop: `1px solid ${color.borderBlack}`,
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
-      maxWidth: 560,
+      width: '60%',
+      borderTop: 'none',
     },
   },
+})
+
+export const detailSectionInner = style({
+  width: '100%',
+  padding: `0 ${margin.siderail}px`,
+  maxWidth: 640,
 })

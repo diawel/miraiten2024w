@@ -2,11 +2,11 @@ import { useLoaderData } from 'react-router-dom'
 import { AsobiLoaderData } from './loader'
 import InitPage from '../../components/InitPage'
 import ResponsiveFrame from '../../components/ResponsiveFrame'
-import Abstract from './Abstract'
-import Detail from './Detail'
 import Footer from '../../components/Footer'
 import { color } from '../../utils/constants'
 import Error from '../Error'
+import ArticleAbstract from '../../components/ArticleAbstract'
+import ArticleDetail from '../../components/ArticleDetail'
 
 const Asobi: React.FC = () => {
   const { article } = useLoaderData() as AsobiLoaderData
@@ -16,8 +16,8 @@ const Asobi: React.FC = () => {
     <div>
       <InitPage />
       <ResponsiveFrame
-        abstractSection={<Abstract {...article} />}
-        detailSection={<Detail {...article} />}
+        abstractSection={<ArticleAbstract {...article} />}
+        detailSection={<ArticleDetail {...article} />}
       />
       <Footer themeColor={color.pink} />
     </div>

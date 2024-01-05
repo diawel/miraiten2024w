@@ -1,12 +1,12 @@
 import { useLoaderData } from 'react-router-dom'
 import InitPage from '../../components/InitPage'
 import ResponsiveFrame from '../../components/ResponsiveFrame'
-import Abstract from './Abstract'
-import Detail from './Detail'
 import Footer from '../../components/Footer'
 import { color } from '../../utils/constants'
 import Error from '../Error'
 import { CrowdfundingLoaderData } from './loader'
+import ArticleAbstract from '../../components/ArticleAbstract'
+import ArticleDetail from '../../components/ArticleDetail'
 
 const Crowdfunding: React.FC = () => {
   const { article } = useLoaderData() as CrowdfundingLoaderData
@@ -16,8 +16,8 @@ const Crowdfunding: React.FC = () => {
     <div>
       <InitPage />
       <ResponsiveFrame
-        abstractSection={<Abstract {...article} />}
-        detailSection={<Detail {...article} />}
+        abstractSection={<ArticleAbstract {...article} />}
+        detailSection={<ArticleDetail {...article} />}
       />
       <Footer themeColor={color.green} />
     </div>

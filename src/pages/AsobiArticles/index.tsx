@@ -15,17 +15,7 @@ const AsobiArticles: React.FC = () => {
       <InitPage />
       <ResponsiveFrame
         abstractSection={<Abstract />}
-        detailSection={
-          <ArticleList
-            articles={articles.map((article) => ({
-              id: article.id,
-              title: article.title,
-              description: article.shortDescription,
-              thumbnail: article.thumbnail,
-            }))}
-            api="asobi"
-          />
-        }
+        detailSection={<ArticleList {...{ articles }} api="asobi" />}
       />
       <Footer themeColor={color.pink} />
     </div>

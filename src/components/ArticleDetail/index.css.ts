@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { margin } from '../../../utils/constants'
+import { margin } from '../../utils/constants'
 
 export const container = style({
   display: 'flex',
@@ -16,12 +16,6 @@ export const section = style({
   gap: margin.block,
 })
 
-export const title = style({})
-
-export const description = style({
-  textAlign: 'justify',
-})
-
 export const slide = style({
   width: '100%',
   aspectRatio: '16 / 9',
@@ -36,4 +30,8 @@ export const poster = style({
   width: '100%',
   aspectRatio: '1',
   objectFit: 'contain',
+})
+
+export const webCapture = style({
+  width: '100%',
 })
