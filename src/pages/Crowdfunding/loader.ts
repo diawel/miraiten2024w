@@ -34,10 +34,10 @@ export const crowdfundingLoader = async (
     }
   )
 
-  const possivelyJson = await articles.text()
-  if (!possivelyJson.match(/(\[.*\]|{.*})/)) return { article: null }
+  if (articles.headers.get('content-type') != 'application/json')
+    return { article: null }
 
   return {
-    article: JSON.parse(possivelyJson),
+    article: await articles.json(),
   }
 }
