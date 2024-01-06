@@ -46,7 +46,7 @@ export const detailSection = style({
   width: '100%',
   backgroundColor: color.primaryWhite,
   position: 'relative',
-  borderTop: `1px solid ${color.borderBlack}`,
+  borderTop: `2px solid ${color.borderBlack}`,
   transform: 'translateZ(0)',
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
