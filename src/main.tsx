@@ -9,12 +9,9 @@ import { asobiArticlesLoader } from './pages/AsobiArticles/loader.ts'
 import CrowdfundingArticles from './pages/CrowdfundingArticles/index.tsx'
 import { crowdfundingArticlesLoader } from './pages/CrowdfundingArticles/loader.ts'
 import Asobi from './pages/Asobi/index.tsx'
-import { asobiDraftLoader, asobiLoader } from './pages/Asobi/loader.ts'
+import { asobiLoader } from './pages/Asobi/loader.ts'
 import Crowdfunding from './pages/Crowdfunding/index.tsx'
-import {
-  crowdfundingDraftLoader,
-  crowdfundingLoader,
-} from './pages/Crowdfunding/loader.ts'
+import { crowdfundingLoader } from './pages/Crowdfunding/loader.ts'
 import GlobalLayout from './pages/GlobalLayout/index.tsx'
 
 const router = createBrowserRouter(
