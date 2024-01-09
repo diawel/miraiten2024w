@@ -14,7 +14,7 @@ export const color = {
 export const margin = {
   paragraph: 12,
   siderail: 24,
-  block: 32,
+  block: 48,
   section: 64,
 }
 
@@ -28,7 +28,7 @@ export const font = {
 export const fontSize = {
   ui: 14,
   body: 16,
-
+  minititle: 20,
   subtitle: 24,
   title: 32,
 }

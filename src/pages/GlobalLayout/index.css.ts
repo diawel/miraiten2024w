@@ -18,6 +18,10 @@ globalStyle('h2', {
   fontSize: fontSize.subtitle,
 })
 
+globalStyle('h3', {
+  fontSize: fontSize.minititle,
+})
+
 globalStyle('body', {
   backgroundColor: color.yellow,
 })

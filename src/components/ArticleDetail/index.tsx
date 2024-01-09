@@ -64,7 +64,7 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
                   margin: ${margin.paragraph}px 0;
                 }
                 & h2 {
-                  margin: ${margin.section}px 0 ${margin.block}px;
+                  margin: ${margin.section}px 0 ${margin.siderail}px;
                 }
                 & ul > li {
                   margin-left: 1.25em;

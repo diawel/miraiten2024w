@@ -5,7 +5,7 @@ export const container = style({
   display: 'flex',
   flexDirection: 'column',
   gap: margin.section,
-  padding: `${margin.block}px 0 ${margin.section}px`,
+  padding: `${margin.siderail}px 0 ${margin.section}px`,
   width: '100%',
   height: 'fit-content',
   '@media': {
@@ -18,7 +18,7 @@ export const container = style({
 export const section = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: margin.block,
+  gap: margin.siderail,
 })
 
 export const slide = style({

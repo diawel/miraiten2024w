@@ -26,6 +26,9 @@ export const slider = style({
   overflowX: 'auto',
   scrollSnapType: 'x mandatory',
   scrollbarWidth: 'none',
+  '::-webkit-scrollbar': {
+    display: 'none',
+  },
 })
 
 export const cardContainer = style({
