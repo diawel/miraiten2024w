@@ -23,7 +23,24 @@ export type AsobiLoaderData = {
   } | null
 }
 
-export const asobiLoader = async (id: string): Promise<AsobiLoaderData> => {
+export const asobiLoader = async (
+  id: string,
+  draftKey?: string
+): Promise<AsobiLoaderData> => {
+  if (draftKey) {
+    const articles = await fetch(
+      import.meta.env.BASE_URL +
+        `/cms/articles/asobi/draft.php?id=${id}&draftKey=${draftKey}`,
+      {
+        cache: 'no-cache',
+      }
+    )
+
+    return {
+      article: await articles.json(),
+    }
+  }
+
   const articles = await fetch(
     import.meta.env.BASE_URL + `/cms/articles/asobi/${id}.json`,
     {
@@ -33,23 +50,6 @@ export const asobiLoader = async (id: string): Promise<AsobiLoaderData> => {
 
   if (articles.headers.get('content-type') != 'application/json')
     return { article: null }
-
-  return {
-    article: await articles.json(),
-  }
-}
-
-export const asobiDraftLoader = async (
-  id: string,
-  draftKey: string
-): Promise<AsobiLoaderData> => {
-  const articles = await fetch(
-    import.meta.env.BASE_URL +
-      `/cms/articles/asobi/draft.php?id=${id}&draftKey=${draftKey}`,
-    {
-      cache: 'no-cache',
-    }
-  )
 
   return {
     article: await articles.json(),
