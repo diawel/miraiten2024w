@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
         </PageLink>
       </div>
       <div className={styles.list}>
-        <h5>はこだて未来展</h5>
+        <h6 className={styles.listTitle}>はこだて未来展</h6>
         <PageLink href="https://fundesign.jp/miraiten2023w/" newTab>
           2023「Odyssey」
         </PageLink>

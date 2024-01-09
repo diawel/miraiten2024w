@@ -1,5 +1,10 @@
 import { style } from '@vanilla-extract/css'
-import { breakpoint, color, margin } from '../../utils/constants'
+import {
+  breakpoint,
+  color,
+  gridBackground,
+  margin,
+} from '../../utils/constants'
 
 export const container = style({
   display: 'flex',
@@ -18,10 +23,9 @@ export const abstractSection = style({
   display: 'flex',
   justifyContent: 'center',
   width: '100%',
-  backgroundImage: 'url(/assets/grid.png)',
-  backgroundSize: 20,
   position: 'sticky',
   top: 0,
+  ...gridBackground,
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
       width: '40%',
@@ -51,6 +55,7 @@ export const detailSection = style({
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
       width: '60%',
+      minHeight: '100vh',
       borderTop: 'none',
     },
   },

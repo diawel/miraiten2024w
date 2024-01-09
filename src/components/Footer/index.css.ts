@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { breakpoint, color, margin } from '../../utils/constants'
+import { breakpoint, color, fontSize, margin } from '../../utils/constants'
 
 export const container = style({
   display: 'flex',
@@ -7,7 +7,6 @@ export const container = style({
   flexDirection: 'column',
   gap: margin.block,
   backgroundColor: color.yellow,
-  borderTop: `2px solid ${color.borderBlack}`,
   padding: `${margin.section}px ${margin.siderail}px`,
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
@@ -21,9 +20,14 @@ export const container = style({
 export const list = style({
   display: 'flex',
   flexDirection: 'column',
+  fontSize: fontSize.ui,
   gap: margin.paragraph,
 })
 
 export const logo = style({
   height: 20,
+})
+
+export const listTitle = style({
+  fontSize: fontSize.ui,
 })

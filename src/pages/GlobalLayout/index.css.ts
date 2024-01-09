@@ -1,11 +1,46 @@
-import { style } from '@vanilla-extract/css'
-import { color } from '../../utils/constants'
+import { globalStyle, style, styleVariants } from '@vanilla-extract/css'
+import { color, font, fontSize } from '../../utils/constants'
 
-export const topBorder = style({
+globalStyle('*', {
+  fontFamily: font.body,
+})
+
+globalStyle('h1, h2, h3, h4, h5, h6', {
+  fontFamily: font.head,
+  fontSize: fontSize.body,
+})
+
+globalStyle('h1', {
+  fontSize: fontSize.title,
+})
+
+globalStyle('h2', {
+  fontSize: fontSize.subtitle,
+})
+
+globalStyle('body', {
+  backgroundColor: color.yellow,
+})
+
+const frameBorderBase = style({
   borderTop: `2px solid ${color.borderBlack}`,
   height: 1,
   position: 'sticky',
   width: '100%',
-  top: 0,
   zIndex: 1000,
+})
+
+export const frameBorder = styleVariants({
+  top: [
+    frameBorderBase,
+    {
+      top: 0,
+    },
+  ],
+  bottom: [
+    frameBorderBase,
+    {
+      bottom: 0,
+    },
+  ],
 })

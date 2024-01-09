@@ -1,4 +1,4 @@
-import { margin } from '../../utils/constants'
+import { color, margin } from '../../utils/constants'
 import { Slide } from '../../pages/Asobi/loader'
 import * as styles from './index.css'
 import MobileOnly from '../MobileOnly'
@@ -54,6 +54,8 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
                 & img {
                   width: 100%;
                   height: auto;
+                  box-shadow: 0px 24px 64px 0px ${color.shadow};
+                  border-radius: 4px;
                 }
                 & figure {
                   margin: ${margin.block}px 0;
@@ -85,7 +87,9 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
       {poster && (
         <div className={styles.section}>
           <h2>大会ポスター</h2>
-          <img className={styles.poster} src={poster} />
+          <div className={styles.posterContainer}>
+            <img className={styles.poster} src={poster} />
+          </div>
           {posterDescription && <Paragraph text={posterDescription} />}
         </div>
       )}

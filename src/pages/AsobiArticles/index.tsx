@@ -1,4 +1,3 @@
-// import * as styles from './index.css'
 import InitPage from '../../components/InitPage'
 import { useLoaderData } from 'react-router-dom'
 import { AsobiArticlesLoaderData } from './loader'

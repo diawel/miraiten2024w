@@ -1,5 +1,5 @@
 import * as styles from './index.css'
-import furtherDetailButton from '../../../assets/furtherDetailButton.svg'
+import showListButton from '../../../assets/showListButton.svg'
 import Paragraph from '../../../components/Paragraph'
 import PageLink from '../../../components/PageLink'
 
@@ -27,7 +27,7 @@ const Detail: React.FC = () => {
         />
         <div className={styles.buttonContainer}>
           <PageLink href="/asobi">
-            <img src={furtherDetailButton} />
+            <img src={showListButton} />
           </PageLink>
         </div>
         <h3>人に寄り添うサービス・アイテムの提案</h3>
@@ -39,7 +39,7 @@ const Detail: React.FC = () => {
         />
         <div className={styles.buttonContainer}>
           <PageLink href="/crowdfunding">
-            <img src={furtherDetailButton} />
+            <img src={showListButton} />
           </PageLink>
         </div>
       </section>

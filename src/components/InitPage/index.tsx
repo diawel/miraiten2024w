@@ -1,25 +1,13 @@
 import { useEffect } from 'react'
 import { ScrollRestoration, useLocation } from 'react-router-dom'
-import { color } from '../../utils/constants'
 
 export type InitPageProps = {
   notFound?: boolean
-  themeColor?: string
   pageTitle?: string
 }
 
-const InitPage: React.FC<InitPageProps> = ({
-  notFound,
-  themeColor,
-  pageTitle,
-}) => {
+const InitPage: React.FC<InitPageProps> = ({ notFound, pageTitle }) => {
   const location = useLocation()
-
-  useEffect(() => {
-    document
-      .querySelector('meta[name="theme-color"]')
-      ?.setAttribute('content', themeColor || color.yellow)
-  }, [themeColor])
 
   useEffect(() => {
     const title = document.querySelector('head title')

@@ -5,8 +5,9 @@ import * as styles from './index.css'
 const GlobalLayout: React.FC = () => {
   return (
     <div>
-      <div className={styles.topBorder} />
+      <div className={styles.frameBorder.top} />
       <Outlet />
+      <div className={styles.frameBorder.bottom} />
       <Footer />
     </div>
   )

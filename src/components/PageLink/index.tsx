@@ -6,6 +6,7 @@ export type PageLinkProps = {
   children: React.ReactNode
   newTab?: boolean
   underline?: boolean
+  forceReload?: boolean
 }
 
 const PageLink: React.FC<PageLinkProps> = ({
@@ -13,6 +14,7 @@ const PageLink: React.FC<PageLinkProps> = ({
   children,
   newTab,
   underline,
+  forceReload,
 }) => {
   const commonProps = {
     className: styles.link,
@@ -25,6 +27,17 @@ const PageLink: React.FC<PageLinkProps> = ({
       <a
         target="_blank"
         rel="noopener noreferrer"
+        {...commonProps}
+        {...{
+          href,
+        }}
+      >
+        {children}
+      </a>
+    )
+  if (forceReload)
+    return (
+      <a
         {...commonProps}
         {...{
           href,
