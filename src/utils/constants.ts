@@ -17,3 +17,8 @@ export const margin = {
 }
 
 export const breakpoint = 840
+
+export const font = {
+  head: 'toppan-bunkyu-midashi-go-std, sans-serif',
+  body: 'hiragino-kaku-gothic-pron, sans-serif',
+}

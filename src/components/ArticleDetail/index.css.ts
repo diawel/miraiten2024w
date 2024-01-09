@@ -22,9 +22,7 @@ export const slide = style({
   border: 'none',
 })
 
-export const body = style({
-  textAlign: 'justify',
-})
+export const body = style({})
 
 export const poster = style({
   width: '100%',
