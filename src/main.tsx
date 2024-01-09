@@ -16,9 +16,15 @@ import {
   crowdfundingLoader,
 } from './pages/Crowdfunding/loader.ts'
 import GlobalLayout from './pages/GlobalLayout/index.tsx'
+import PreOpen from './pages/PreOpen/index.tsx'
 
 const router = createBrowserRouter(
   [
+    {
+      path: '/',
+      element: <PreOpen />,
+      errorElement: <Error />,
+    },
     {
       path: '/',
       element: <GlobalLayout />,
