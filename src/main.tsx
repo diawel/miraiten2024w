@@ -41,10 +41,17 @@ const router = createBrowserRouter(
           },
         },
         {
+          path: '/asobi/draft/:id',
+          element: <Asobi />,
+          loader: async ({ params }) => {
+            return asobiLoader(params.id ?? '', params.draftKey ?? '')
+          },
+        },
+        {
           path: '/asobi/draft/:id/:draftKey',
           element: <Asobi />,
           loader: async ({ params }) => {
-            return asobiDraftLoader(params.id ?? '', params.draftKey ?? '')
+            return asobiLoader(params.id ?? '', params.draftKey ?? '')
           },
         },
         {
@@ -60,13 +67,17 @@ const router = createBrowserRouter(
           },
         },
         {
+          path: '/crowdfunding/draft/:id',
+          element: <Crowdfunding />,
+          loader: async ({ params }) => {
+            return crowdfundingLoader(params.id ?? '', params.draftKey ?? '')
+          },
+        },
+        {
           path: '/crowdfunding/draft/:id/:draftKey',
           element: <Crowdfunding />,
           loader: async ({ params }) => {
-            return crowdfundingDraftLoader(
-              params.id ?? '',
-              params.draftKey ?? ''
-            )
+            return crowdfundingLoader(params.id ?? '', params.draftKey ?? '')
           },
         },
       ],
