@@ -9,7 +9,7 @@ import ArticleDetail from '../../components/ArticleDetail'
 const Crowdfunding: React.FC = () => {
   const { article } = useLoaderData() as CrowdfundingLoaderData
 
-  if (!article) return <Error />
+  if (!article) return <Error forceNotFound />
   return (
     <>
       <InitPage pageTitle={article.title} />

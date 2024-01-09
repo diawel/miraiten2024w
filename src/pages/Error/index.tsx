@@ -3,10 +3,14 @@ import InitPage from '../../components/InitPage'
 import PageLink from '../../components/PageLink'
 import * as styles from './index.css'
 
-const Error: React.FC = () => {
+export type ErrorProps = {
+  forceNotFound?: boolean
+}
+
+const Error: React.FC<ErrorProps> = ({ forceNotFound }) => {
   const error = useRouteError()
   // @ts-expect-error statusがundefinedでもfalseになる
-  if (error.status == 404)
+  if (forceNotFound || error.status == 404)
     return (
       <div className={styles.container}>
         <InitPage notFound pageTitle="404 Not Found" />
