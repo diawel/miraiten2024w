@@ -8,6 +8,7 @@ export const color = {
   orange: '#ff8800',
   borderBlack: '#231815',
   shadow: 'rgba(0, 0, 0, 0.12)',
+  solidShadow: '#dddddd',
 }
 
 export const margin = {

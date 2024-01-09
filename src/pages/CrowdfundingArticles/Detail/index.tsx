@@ -10,12 +10,11 @@ export type DetailProps = {
 const Detail: React.FC<DetailProps> = ({ articles }) => {
   return (
     <div className={styles.container}>
+      <h2>作品一覧</h2>
       <ArticleList {...{ articles }} api="crowdfunding" />
-      <div className={styles.buttonContainer}>
-        <PageLink href="https://docs.google.com/forms" newTab>
-          <img src={voteButton} />
-        </PageLink>
-      </div>
+      <PageLink href="https://docs.google.com/forms" newTab>
+        <img src={voteButton} />
+      </PageLink>
     </div>
   )
 }

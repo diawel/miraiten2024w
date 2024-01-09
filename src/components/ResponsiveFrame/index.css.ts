@@ -24,7 +24,7 @@ export const abstractSection = style({
   justifyContent: 'center',
   width: '100%',
   position: 'sticky',
-  top: 0,
+  overflow: 'hidden',
   ...gridBackground,
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
@@ -52,6 +52,7 @@ export const detailSection = style({
   position: 'relative',
   borderTop: `2px solid ${color.borderBlack}`,
   transform: 'translateZ(0)',
+  overflow: 'hidden',
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
       width: '60%',
