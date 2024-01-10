@@ -47,7 +47,7 @@ const router = createBrowserRouter(
           path: '/asobi/draft/:id',
           element: <Asobi />,
           loader: async ({ params }) => {
-            return asobiLoader(params.id ?? '', params.draftKey ?? '')
+            return asobiLoader(params.id ?? '')
           },
         },
         {
@@ -73,7 +73,7 @@ const router = createBrowserRouter(
           path: '/crowdfunding/draft/:id',
           element: <Crowdfunding />,
           loader: async ({ params }) => {
-            return crowdfundingLoader(params.id ?? '', params.draftKey ?? '')
+            return crowdfundingLoader(params.id ?? '')
           },
         },
         {
