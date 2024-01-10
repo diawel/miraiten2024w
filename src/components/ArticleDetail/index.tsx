@@ -1,4 +1,4 @@
-import { color, margin } from '../../utils/constants'
+import { margin } from '../../utils/constants'
 import { Slide } from '../../pages/Asobi/loader'
 import * as styles from './index.css'
 import MobileOnly from '../MobileOnly'
@@ -55,8 +55,6 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
                 & img {
                   width: 100%;
                   height: auto;
-                  box-shadow: 0px 24px 64px 0px ${color.shadow};
-                  border-radius: 4px;
                 }
                 & figure {
                   margin: ${margin.block}px 0;
