@@ -8,7 +8,11 @@ export const container = style({
   flexDirection: 'column',
   gap: margin.block,
   justifyContent: 'center',
-  padding: `${margin.section}px 0`,
+  '@media': {
+    [`screen and (min-width: ${breakpoint}px)`]: {
+      padding: `${margin.section}px 0`,
+    },
+  },
 })
 
 const mainVisualBase = style({
