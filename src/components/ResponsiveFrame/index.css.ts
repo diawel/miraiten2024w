@@ -36,6 +36,7 @@ export const abstractSection = style({
 
 export const abstractSectionInner = style({
   width: '100%',
+  maxWidth: 640,
   padding: `0 ${margin.siderail}px`,
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {

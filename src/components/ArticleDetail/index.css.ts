@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { breakpoint, color, margin } from '../../utils/constants'
+import { breakpoint, margin } from '../../utils/constants'
 
 export const container = style({
   display: 'flex',
@@ -25,8 +25,6 @@ export const slide = style({
   width: '100%',
   aspectRatio: '16 / 9',
   border: 'none',
-  boxShadow: `0px 24px 64px 0px ${color.shadow}`,
-  borderRadius: 4,
 })
 
 export const body = style({})
@@ -41,12 +39,8 @@ export const poster = style({
   maxWidth: '100%',
   width: 'auto',
   maxHeight: `calc(100vh - ${margin.siderail * 2}px)`,
-  boxShadow: `0px 24px 64px 0px ${color.shadow}`,
-  borderRadius: 4,
 })
 
 export const webCapture = style({
   width: '100%',
-  boxShadow: `0px 24px 64px 0px ${color.shadow}`,
-  borderRadius: 4,
 })
