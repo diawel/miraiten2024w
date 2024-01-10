@@ -25,7 +25,6 @@ export const abstractSection = style({
   width: '100%',
   position: 'sticky',
   overflow: 'hidden',
-  ...gridBackground,
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
       width: '40%',
@@ -39,9 +38,10 @@ export const abstractSectionInner = style({
   display: 'flex',
   width: '100%',
   padding: `0 ${margin.siderail}px`,
+  ...gridBackground,
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
-      maxWidth: 480,
+      padding: `0 calc(((100% - 480px) / 2) + ${margin.siderail}px)`,
       height: 'fit-content',
       minHeight: '100vh',
       alignItems: 'center',
