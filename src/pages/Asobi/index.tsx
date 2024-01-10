@@ -9,7 +9,7 @@ import ArticleDetail from '../../components/ArticleDetail'
 const Asobi: React.FC = () => {
   const { article } = useLoaderData() as AsobiLoaderData
 
-  if (!article) return <Error />
+  if (!article) return <Error forceNotFound />
   return (
     <>
       <InitPage pageTitle={article.title} />

@@ -1,9 +1,10 @@
-import { color, margin } from '../../utils/constants'
+import { margin } from '../../utils/constants'
 import { Slide } from '../../pages/Asobi/loader'
 import * as styles from './index.css'
 import MobileOnly from '../MobileOnly'
 import TitleSection from '../TitleSection'
 import Paragraph from '../Paragraph'
+import PageLink from '../PageLink'
 
 export type ArticleDetailProps = {
   title: string
@@ -54,8 +55,6 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
                 & img {
                   width: 100%;
                   height: auto;
-                  box-shadow: 0px 24px 64px 0px ${color.shadow};
-                  border-radius: 4px;
                 }
                 & figure {
                   margin: ${margin.block}px 0;
@@ -98,8 +97,12 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
           <h2>Webサイト</h2>
           {webCapture && <img className={styles.webCapture} src={webCapture} />}
           {webDescription && <Paragraph text={webDescription} />}
+          {webUrl && (
+            <PageLink href={webUrl} underline newTab>
+              制作したWebサイトはこちら
+            </PageLink>
+          )}
         </div>
-        // TODO: アセット待ち
       )}
     </div>
   )

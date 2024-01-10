@@ -30,16 +30,22 @@ export const abstractSection = style({
     [`screen and (min-width: ${breakpoint}px)`]: {
       width: '40%',
       height: '100vh',
+      overflowY: 'auto',
     },
   },
 })
 
 export const abstractSectionInner = style({
+  display: 'flex',
   width: '100%',
+  maxWidth: 640,
   padding: `0 ${margin.siderail}px`,
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
       maxWidth: 480,
+      height: 'fit-content',
+      minHeight: '100vh',
+      alignItems: 'center',
     },
   },
 })
