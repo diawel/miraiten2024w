@@ -72,10 +72,10 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
                 & ol > li {
                   margin-left: 1.5em;
                 }
-                :first-child {
+                &:first-child {
                   margin-top: 0;
                 }
-                :last-child {
+                &:last-child {
                   margin-bottom: 0;
                 }
               }
