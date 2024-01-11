@@ -7,7 +7,7 @@ export const container = style({
   flexDirection: 'column',
   gap: margin.block,
   backgroundColor: color.yellow,
-  padding: `${margin.section}px ${margin.siderail}px`,
+  padding: `${margin.block}px ${margin.siderail}px`,
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
       flexDirection: 'row',
