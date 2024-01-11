@@ -21,4 +21,5 @@ export const buttonContainer = style({
   display: 'flex',
   justifyContent: 'center',
   width: '100%',
+  padding: `${margin.paragraph}px 0 ${margin.siderail}px`,
 })
