@@ -37,14 +37,22 @@ export const abstractSection = style({
 export const abstractSectionInner = style({
   display: 'flex',
   width: '100%',
-  padding: `0 ${margin.siderail}px`,
   ...gridBackground,
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
-      padding: `0 calc(((100% - 480px) / 2) + ${margin.siderail}px)`,
       height: 'fit-content',
       minHeight: '100vh',
       alignItems: 'center',
+      justifyContent: 'center',
+    },
+  },
+})
+
+export const abstractSectionInnerInner = style({
+  padding: `0 ${margin.siderail}px`,
+  '@media': {
+    [`screen and (min-width: ${breakpoint}px)`]: {
+      maxWidth: 480,
     },
   },
 })
