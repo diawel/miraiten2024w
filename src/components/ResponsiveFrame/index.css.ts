@@ -28,7 +28,7 @@ export const abstractSection = style({
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
       width: '40%',
-      height: '100vh',
+      minHeight: 'calc(100vh - 4px)',
       overflowY: 'auto',
     },
   },
@@ -42,7 +42,7 @@ export const abstractSectionInner = style({
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
       height: 'fit-content',
-      minHeight: '100vh',
+      minHeight: 'calc(100vh - 4px)',
       alignItems: 'center',
     },
   },

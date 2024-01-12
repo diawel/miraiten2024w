@@ -116,7 +116,7 @@ const dropIn = keyframes({
 export const exclamatoinContainer = style({
   position: 'absolute',
   bottom: '-3%',
-  right: 0,
+  right: '4%',
   width: '14%',
   animation: `${dropIn} 0.6s 0.9s cubic-bezier(0, 0.6, 0.4, 1) backwards`,
 })
@@ -126,12 +126,12 @@ const rotate = keyframes({
     transform: 'rotate(0deg)',
   },
   to: {
-    transform: 'rotate(20deg)',
+    transform: 'rotate(10deg)',
   },
 })
 
 export const exclamatoin = style({
   width: '100%',
-  animation: `${rotate} 0.9s 1.2s steps(2, jump-both) backwards infinite`,
+  animation: `${rotate} 0.3s 1.2s steps(1, end) both`,
   transformOrigin: '32% 90%',
 })
