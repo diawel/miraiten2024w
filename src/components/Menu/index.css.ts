@@ -46,16 +46,10 @@ export const background = styleVariants({
 const contentContainerBase = style({
   position: 'absolute',
   display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'flex-start',
-  justifyContent: 'center',
-  gap: margin.section,
+  alignItems: 'center',
   bottom: 0,
   width: '100%',
   height: '100svh',
-  overscrollBehavior: 'contain',
-  overflowY: 'auto',
-  padding: `${margin.block}px ${margin.siderail}px`,
   transition: 'clip-path 0.6s',
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
@@ -79,6 +73,18 @@ export const contentContainer = styleVariants({
       clipPath: 'circle(0% at 100% 100%)',
     },
   ],
+})
+
+export const contentContainerInner = style({
+  width: '100%',
+  maxHeight: '100%',
+  overscrollBehavior: 'contain',
+  overflowY: 'auto',
+  padding: `${margin.block}px ${margin.siderail}px`,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  gap: margin.section,
 })
 
 export const buttonContainer = style({

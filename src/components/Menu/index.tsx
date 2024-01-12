@@ -27,42 +27,44 @@ const Menu: React.FC = () => {
           open ? styles.contentContainer.open : styles.contentContainer.closed
         }
       >
-        <button
-          className={styles.clickable}
-          onClick={() => {
-            setOpen(false)
-            navigate('/')
-          }}
-        >
-          <img src={logo} alt="logo" className={styles.logo} />
-        </button>
-        <button
-          className={styles.clickable}
-          onClick={() => {
-            setOpen(false)
-            navigate('/asobi')
-          }}
-        >
-          <div className={styles.link}>新しい遊びの提案</div>
-        </button>
-        <button
-          className={styles.clickable}
-          onClick={() => {
-            setOpen(false)
-            navigate('crowdfunding')
-          }}
-        >
-          <div className={styles.link}>
-            人に寄り添うサービス・アイテムの提案
+        <div className={styles.contentContainerInner}>
+          <button
+            className={styles.clickable}
+            onClick={() => {
+              setOpen(false)
+              navigate('/')
+            }}
+          >
+            <img src={logo} alt="logo" className={styles.logo} />
+          </button>
+          <button
+            className={styles.clickable}
+            onClick={() => {
+              setOpen(false)
+              navigate('/asobi')
+            }}
+          >
+            <div className={styles.link}>新しい遊びの提案</div>
+          </button>
+          <button
+            className={styles.clickable}
+            onClick={() => {
+              setOpen(false)
+              navigate('crowdfunding')
+            }}
+          >
+            <div className={styles.link}>
+              人に寄り添うサービス・アイテムの提案
+            </div>
+          </button>
+          <div className={styles.snsContainer}>
+            <PageLink href="https://www.instagram.com/miraiten2024" newTab>
+              <img src={instagram} className={styles.snsIcon} />
+            </PageLink>
+            <PageLink href="https://twitter.com/miraiten2024" newTab>
+              <img src={x} className={styles.snsIcon} />
+            </PageLink>
           </div>
-        </button>
-        <div className={styles.snsContainer}>
-          <PageLink href="https://www.instagram.com/miraiten2024" newTab>
-            <img src={instagram} className={styles.snsIcon} />
-          </PageLink>
-          <PageLink href="https://twitter.com/miraiten2024" newTab>
-            <img src={x} className={styles.snsIcon} />
-          </PageLink>
         </div>
       </div>
       <div className={styles.buttonContainer}>
