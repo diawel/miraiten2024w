@@ -38,11 +38,7 @@ const ResponsiveFrame: React.FC<ResponsiveFrameProps> = ({
         ref={abstractSectionRef}
         style={{ top: abstractSectionTop }}
       >
-        <div className={styles.abstractSectionInner}>
-          <div className={styles.abstractSectionInnerInner}>
-            {abstractSection}
-          </div>
-        </div>
+        <div className={styles.abstractSectionInner}>{abstractSection}</div>
       </div>
       <div className={styles.detailSection}>
         <div className={styles.detailSectionInner}>{detailSection}</div>

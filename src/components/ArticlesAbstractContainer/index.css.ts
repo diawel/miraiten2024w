@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { margin } from '../../utils/constants'
+import { breakpoint, margin } from '../../utils/constants'
 
 export const container = style({
   width: '100%',
@@ -8,7 +8,7 @@ export const container = style({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: `${margin.section}px 0`,
+  padding: `${margin.section}px ${margin.siderail}px`,
   gap: `${margin.section}px`,
 })
 
@@ -26,4 +26,9 @@ export const flowSection = style({
   flexDirection: 'column',
   alignItems: 'center',
   gap: `${margin.block}px`,
+  '@media': {
+    [`screen and (min-width: ${breakpoint}px)`]: {
+      maxWidth: 480 - margin.siderail * 2,
+    },
+  },
 })

@@ -10,14 +10,14 @@ export const container = style({
   justifyContent: 'center',
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
-      padding: `${margin.section}px 0`,
+      padding: `${margin.section}px ${margin.siderail}px`,
+      maxWidth: 480,
     },
   },
 })
 
 const mainVisualBase = style({
-  width: `calc(100% + ${margin.siderail * 2}px)`,
-  margin: `0 -${margin.siderail}px`,
+  width: '100%',
   aspectRatio: '16 / 9',
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {

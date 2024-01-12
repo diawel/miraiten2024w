@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { ScrollRestoration, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 export type InitPageProps = {
   notFound?: boolean
@@ -43,7 +43,7 @@ const InitPage: React.FC<InitPageProps> = ({ notFound, pageTitle }) => {
     }
   }, [notFound, location])
 
-  return <ScrollRestoration />
+  return <></>
 }
 
 const buildRelativeUrl = (

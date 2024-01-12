@@ -48,15 +48,6 @@ export const abstractSectionInner = style({
   },
 })
 
-export const abstractSectionInnerInner = style({
-  padding: `0 ${margin.siderail}px`,
-  '@media': {
-    [`screen and (min-width: ${breakpoint}px)`]: {
-      maxWidth: 480,
-    },
-  },
-})
-
 export const detailSection = style({
   display: 'flex',
   justifyContent: 'center',
