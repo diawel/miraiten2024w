@@ -18,9 +18,10 @@ const ResponsiveFrame: React.FC<ResponsiveFrameProps> = ({
       setAbstractSectionTop(
         Math.min(
           document.documentElement.clientHeight -
+            4 -
             (abstractSectionRef.current?.clientHeight || 0),
           0
-        )
+        ) + 2
       )
       animationRef.current = requestAnimationFrame(animationFrame)
     }

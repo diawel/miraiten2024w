@@ -4,7 +4,7 @@ import { breakpoint, margin } from '../../../utils/constants'
 export const container = style({
   position: 'relative',
   width: '100%',
-  height: '100svh',
+  height: 'calc(100svh - 4px)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -133,4 +133,5 @@ const rotate = keyframes({
 export const exclamatoin = style({
   width: '100%',
   animation: `${rotate} 0.9s 1.2s steps(2, jump-both) backwards infinite`,
+  transformOrigin: '32% 90%',
 })
