@@ -12,7 +12,7 @@ export const container = style({
     [`screen and (min-width: ${breakpoint}px)`]: {
       flexDirection: 'row',
       gap: margin.section,
-      padding: `${margin.section}px`,
+      padding: margin.section,
     },
   },
 })
