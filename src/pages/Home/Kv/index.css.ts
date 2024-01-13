@@ -11,12 +11,31 @@ export const container = style({
   padding: `0 ${margin.siderail}px`,
 })
 
+const zoomIn = keyframes({
+  from: {
+    transform: 'scale(0.8)',
+  },
+  to: {
+    transform: 'scale(1)',
+  },
+})
+
 export const kvContainer = style({
   maxWidth: '100%',
   height: '100%',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  animation: `${zoomIn} 0.6s cubic-bezier(0, 0.6, 0.4, 1) backwards`,
+})
+
+const slideUp = keyframes({
+  from: {
+    transform: 'translateY(0)',
+  },
+  to: {
+    transform: 'translateY(-16%)',
+  },
 })
 
 export const kvContainerInner = style({
@@ -28,7 +47,7 @@ export const kvContainerInner = style({
   aspectRatio: '4 / 5',
   display: 'flex',
   flexDirection: 'column',
-  transform: 'translateY(-16%)',
+  animation: `${slideUp} 0.9s 1.8s cubic-bezier(0, 0.6, 0.4, 1) forwards`,
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
       maxWidth: 480,
@@ -68,12 +87,26 @@ const fadeIn = keyframes({
   },
 })
 
-export const kvBackground = style({
+export const kvBackgroundContainer = style({
   width: '168%',
   position: 'absolute',
   top: '-16%',
   left: '-30%',
-  animation: `${fadeIn} 0.6s 1.8s backwards`,
+  animation: `${fadeIn} 0.6s 0.6s backwards`,
+})
+
+const slideDown = keyframes({
+  from: {
+    transform: 'translateY(-8%)',
+  },
+  to: {
+    transform: 'translateY(0)',
+  },
+})
+
+export const kvBackground = style({
+  width: '100%',
+  animation: `${slideDown} 0.9s 1.8s cubic-bezier(0, 0.6, 0.4, 1) backwards`,
 })
 
 const slideIn = keyframes({
@@ -93,7 +126,7 @@ export const textBlock = style({
   bottom: margin.siderail,
   width: '75%',
   maxWidth: 360,
-  animation: `${slideIn} 0.6s 1.2s cubic-bezier(0, 0.6, 0.4, 1) backwards`,
+  animation: `${slideIn} 0.6s 2.1s cubic-bezier(0, 0.6, 0.4, 1) backwards`,
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
       maxWidth: 420,
@@ -118,7 +151,7 @@ export const exclamatoinContainer = style({
   bottom: '-3%',
   right: '4%',
   width: '14%',
-  animation: `${dropIn} 0.6s 0.9s cubic-bezier(0, 0.6, 0.4, 1) backwards`,
+  animation: `${dropIn} 0.3s 1.2s cubic-bezier(0, 0.6, 0.4, 1) backwards`,
 })
 
 const rotate = keyframes({

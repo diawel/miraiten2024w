@@ -10,7 +10,9 @@ const Kv: React.FC = () => {
     <div className={styles.container}>
       <div className={styles.kvContainer}>
         <div className={styles.kvContainerInner}>
-          <img className={styles.kvBackground} src={kvBackground} />
+          <div className={styles.kvBackgroundContainer}>
+            <img className={styles.kvBackground} src={kvBackground} />
+          </div>
           <img className={styles.kv} src={outlinedKv} />
           <img className={styles.coleredKv} src={kv} />
           <div className={styles.exclamatoinContainer}>
