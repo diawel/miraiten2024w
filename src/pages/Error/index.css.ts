@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { gridBackground } from '../../utils/constants'
+import { gridBackground, margin } from '../../utils/constants'
 
 export const container = style({
   display: 'flex',
@@ -9,5 +9,6 @@ export const container = style({
   gap: '1rem',
   minHeight: '100svh',
   width: '100%',
+  padding: margin.siderail,
   ...gridBackground,
 })
