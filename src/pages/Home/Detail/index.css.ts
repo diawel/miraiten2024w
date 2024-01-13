@@ -23,3 +23,21 @@ export const buttonContainer = style({
   width: '100%',
   padding: `${margin.paragraph}px 0 ${margin.siderail}px`,
 })
+
+export const image = style({
+  width: '100%',
+})
+
+export const map = style({
+  width: '100%',
+  aspectRatio: '1',
+  border: 'none',
+})
+
+export const anchor = style({
+  textDecoration: 'underline',
+  color: 'inherit',
+  ':hover': {
+    textDecoration: 'none',
+  },
+})
