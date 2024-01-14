@@ -1,18 +1,13 @@
 import { style } from '@vanilla-extract/css'
-import { breakpoint, margin } from '../../utils/constants'
+import { margin } from '../../utils/constants'
 
 export const container = style({
   display: 'flex',
   flexDirection: 'column',
   gap: margin.section,
-  padding: `${margin.siderail}px 0 ${margin.section}px`,
+  padding: `${margin.section}px 0`,
   width: '100%',
   height: 'fit-content',
-  '@media': {
-    [`screen and (min-width: ${breakpoint}px)`]: {
-      padding: `${margin.section}px 0`,
-    },
-  },
 })
 
 export const section = style({

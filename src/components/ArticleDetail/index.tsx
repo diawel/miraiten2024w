@@ -57,7 +57,7 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
                   height: auto;
                 }
                 & figure {
-                  margin: ${margin.block}px 0;
+                  margin: ${margin.siderail}px 0;
                 }
                 & :is(h3, p, ul, ol) {
                   margin: ${margin.paragraph}px 0;
@@ -72,10 +72,10 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
                 & ol > li {
                   margin-left: 1.5em;
                 }
-                &:first-child {
+                & > :first-child {
                   margin-top: 0;
                 }
-                &:last-child {
+                & > :last-child {
                   margin-bottom: 0;
                 }
               }

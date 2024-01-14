@@ -2,6 +2,6 @@ import { style } from '@vanilla-extract/css'
 
 export const button = style({
   pointerEvents: 'none',
-  position: 'fixed',
+  position: 'absolute',
   transition: 'opacity 0.3s, transform 0.3s',
 })

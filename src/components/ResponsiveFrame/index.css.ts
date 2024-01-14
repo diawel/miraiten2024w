@@ -28,7 +28,7 @@ export const abstractSection = style({
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
       width: '40%',
-      minHeight: 'calc(100vh - 4px)',
+      height: 'calc(100vh - 4px)',
       overflowY: 'auto',
     },
   },

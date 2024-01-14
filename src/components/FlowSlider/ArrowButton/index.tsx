@@ -1,5 +1,6 @@
 import * as styles from './index.css'
 import arrowButton from '../../../assets/ArrowButton.svg'
+import { useEffect, useRef, useState } from 'react'
 
 export type ArrowButtonDirection = 'left' | 'right'
 
@@ -17,6 +18,23 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({
   position,
   isShown,
 }) => {
+  const [currentPosition, setCurrentPosition] = useState(position)
+  const animationRef = useRef(0)
+  useEffect(() => {
+    const animationFrame = () => {
+      const modifiedPosition = { ...currentPosition }
+      modifiedPosition.top += (position.top - currentPosition.top) / 8
+      modifiedPosition.left += (position.left - currentPosition.left) / 8
+      setCurrentPosition(modifiedPosition)
+
+      animationRef.current = requestAnimationFrame(animationFrame)
+    }
+    animationRef.current = requestAnimationFrame(animationFrame)
+
+    return () => {
+      if (animationRef.current) cancelAnimationFrame(animationRef.current)
+    }
+  }, [currentPosition, position])
   return (
     <img
       className={styles.button}
@@ -26,8 +44,8 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({
           direction === 'left'
             ? 'translate(-50%, -50%) rotate(-180deg)'
             : 'translate(-50%, -50%)',
-        top: position.top,
-        left: position.left,
+        top: currentPosition.top,
+        left: currentPosition.left,
         opacity: isShown ? 1 : 0,
       }}
     />

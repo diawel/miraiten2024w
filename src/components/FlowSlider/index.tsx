@@ -46,22 +46,20 @@ const FlowSlider: React.FC<FlowSliderProps> = ({ children }) => {
             setArrowButtonDirection('left')
           else setArrowButtonDirection('right')
           setArrowButtonPosition({
-            top: event.clientY,
-            left: event.clientX,
+            top: event.clientY - containerRect.top,
+            left: event.clientX - containerRect.left,
           })
         }}
         onMouseEnter={(event) => {
+          const containerRect = event.currentTarget.getBoundingClientRect()
           if (!('ontouchstart' in window)) setShowArrowButton(true)
           setArrowButtonPosition({
-            top: event.clientY,
-            left: event.clientX,
+            top: event.clientY - containerRect.top,
+            left: event.clientX - containerRect.left,
           })
         }}
         onMouseLeave={() => {
           setShowArrowButton(false)
-        }}
-        style={{
-          cursor: showArrowButton ? 'none' : 'default',
         }}
         ref={containerRef}
       >
@@ -71,12 +69,12 @@ const FlowSlider: React.FC<FlowSliderProps> = ({ children }) => {
               {child}
             </div>
           ))}
-          <ArrowButton
-            direction={arrowButtonDirection}
-            position={arrowButtonPosition}
-            isShown={showArrowButton}
-          />
         </div>
+        <ArrowButton
+          direction={arrowButtonDirection}
+          position={arrowButtonPosition}
+          isShown={showArrowButton}
+        />
       </div>
     </button>
   )
