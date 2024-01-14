@@ -22,37 +22,36 @@ export type CrowdfundingLoaderData = {
     webDescription?: string
     webUrl?: string
   } | null
+  articles: {
+    id: string
+    team: number
+    thumbnail: string
+    title: string
+    shortDescription: string
+  }[]
 }
 
 export const crowdfundingLoader = async (
   id: string,
   draftKey?: string
 ): Promise<CrowdfundingLoaderData> => {
-  if (draftKey) {
-    const articles = await fetch(
-      import.meta.env.BASE_URL +
-        `/cms/articles/crowdfunding/draft.php?id=${id}&draftKey=${draftKey}`,
-      {
-        cache: 'no-cache',
-      }
-    )
-
-    return {
-      article: await articles.json(),
-    }
-  }
-
   const articles = await fetch(
-    import.meta.env.BASE_URL + `/cms/articles/crowdfunding/${id}.json`,
+    import.meta.env.BASE_URL + '/cms/articles/crowdfunding/list.json',
     {
       cache: 'no-cache',
     }
   )
-
-  if (articles.headers.get('content-type') != 'application/json')
-    return { article: null }
-
+  const article = await fetch(
+    draftKey
+      ? import.meta.env.BASE_URL +
+          `/cms/articles/crowdfunding/draft.php?id=${id}&draftKey=${draftKey}`
+      : import.meta.env.BASE_URL + `/cms/articles/crowdfunding/${id}.json`,
+    {
+      cache: 'no-cache',
+    }
+  )
   return {
-    article: await articles.json(),
+    article: await article.json(),
+    articles: await articles.json(),
   }
 }

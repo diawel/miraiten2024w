@@ -5,8 +5,12 @@ import MobileOnly from '../MobileOnly'
 import TitleSection from '../TitleSection'
 import Paragraph from '../Paragraph'
 import PageLink from '../PageLink'
+import { ArticleAbstract } from '../ArticleList'
+import ArticleListSmall from '../ArticleListSmall'
+import voteButton from '../../assets/voteButton.svg'
 
 export type ArticleDetailProps = {
+  id: string
   title: string
   shortDescription: string
   description?: string
@@ -17,9 +21,12 @@ export type ArticleDetailProps = {
   webCapture?: string
   webDescription?: string
   webUrl?: string
+  api: 'asobi' | 'crowdfunding'
+  articles: ArticleAbstract[]
 }
 
 const ArticleDetail: React.FC<ArticleDetailProps> = ({
+  id,
   title,
   shortDescription,
   description,
@@ -30,6 +37,8 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
   webCapture,
   webDescription,
   webUrl,
+  api,
+  articles,
 }) => {
   return (
     <div className={styles.container}>
@@ -104,6 +113,16 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
           )}
         </div>
       )}
+
+      <div className={styles.buttonContainer}>
+        <PageLink href="https://docs.google.com/forms" newTab>
+          <img src={voteButton} />
+        </PageLink>
+      </div>
+      <ArticleListSmall
+        articles={articles.filter((article) => article.id != id)}
+        {...{ api }}
+      />
     </div>
   )
 }

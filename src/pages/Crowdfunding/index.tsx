@@ -7,7 +7,7 @@ import ArticleAbstract from '../../components/ArticleAbstract'
 import ArticleDetail from '../../components/ArticleDetail'
 
 const Crowdfunding: React.FC = () => {
-  const { article } = useLoaderData() as CrowdfundingLoaderData
+  const { article, articles } = useLoaderData() as CrowdfundingLoaderData
 
   if (!article) return <Error forceNotFound />
   return (
@@ -15,7 +15,9 @@ const Crowdfunding: React.FC = () => {
       <InitPage pageTitle={article.title} />
       <ResponsiveFrame
         abstractSection={<ArticleAbstract {...article} />}
-        detailSection={<ArticleDetail {...article} />}
+        detailSection={
+          <ArticleDetail api="crowdfunding" {...{ ...article, articles }} />
+        }
       />
     </>
   )

@@ -21,37 +21,36 @@ export type AsobiLoaderData = {
     poster?: string
     posterDescription?: string
   } | null
+  articles: {
+    id: string
+    team: number
+    thumbnail: string
+    title: string
+    shortDescription: string
+  }[]
 }
 
 export const asobiLoader = async (
   id: string,
   draftKey?: string
 ): Promise<AsobiLoaderData> => {
-  if (draftKey) {
-    const articles = await fetch(
-      import.meta.env.BASE_URL +
-        `/cms/articles/asobi/draft.php?id=${id}&draftKey=${draftKey}`,
-      {
-        cache: 'no-cache',
-      }
-    )
-
-    return {
-      article: await articles.json(),
-    }
-  }
-
   const articles = await fetch(
-    import.meta.env.BASE_URL + `/cms/articles/asobi/${id}.json`,
+    import.meta.env.BASE_URL + '/cms/articles/asobi/list.json',
     {
       cache: 'no-cache',
     }
   )
-
-  if (articles.headers.get('content-type') != 'application/json')
-    return { article: null }
-
+  const article = await fetch(
+    draftKey
+      ? import.meta.env.BASE_URL +
+          `/cms/articles/asobi/draft.php?id=${id}&draftKey=${draftKey}`
+      : import.meta.env.BASE_URL + `/cms/articles/asobi/${id}.json`,
+    {
+      cache: 'no-cache',
+    }
+  )
   return {
-    article: await articles.json(),
+    article: await article.json(),
+    articles: await articles.json(),
   }
 }

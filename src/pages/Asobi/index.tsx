@@ -7,7 +7,7 @@ import ArticleAbstract from '../../components/ArticleAbstract'
 import ArticleDetail from '../../components/ArticleDetail'
 
 const Asobi: React.FC = () => {
-  const { article } = useLoaderData() as AsobiLoaderData
+  const { article, articles } = useLoaderData() as AsobiLoaderData
 
   if (!article) return <Error forceNotFound />
   return (
@@ -15,7 +15,9 @@ const Asobi: React.FC = () => {
       <InitPage pageTitle={article.title} />
       <ResponsiveFrame
         abstractSection={<ArticleAbstract {...article} />}
-        detailSection={<ArticleDetail {...article} />}
+        detailSection={
+          <ArticleDetail api="asobi" {...{ ...article, articles }} />
+        }
       />
     </>
   )

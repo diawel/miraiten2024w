@@ -39,3 +39,9 @@ export const poster = style({
 export const webCapture = style({
   width: '100%',
 })
+
+export const buttonContainer = style({
+  display: 'flex',
+  justifyContent: 'center',
+  width: '100%',
+})

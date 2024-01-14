@@ -12,6 +12,7 @@ export const color = {
 }
 
 export const margin = {
+  minimum: 8,
   paragraph: 12,
   siderail: 24,
   block: 48,
