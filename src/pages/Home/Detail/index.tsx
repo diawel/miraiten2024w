@@ -84,7 +84,7 @@ const Detail: React.FC<DetailProps> = ({
       >
         <section className={styles.section}>
           <h2>前回開催の様子</h2>
-          <img src="/assets/last_miraiten.jpg" />
+          <img src={import.meta.env.BASE_URL + '/assets/last_miraiten.jpg'} />
           <Paragraph text="前回開催のはこだて未来展2023『Odyssey』の様子です。今回と同様に、｢新しい遊び｣と｢人に寄り添うサービスやアイテム｣の提案を行いました。" />
           <a
             href=""
