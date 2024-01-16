@@ -11,8 +11,8 @@ const ResponsiveFrame: React.FC<ResponsiveFrameProps> = ({
   detailSection,
 }) => {
   const abstractSectionRef = useRef<HTMLDivElement>(null)
-  const animationRef = useRef<number>(0)
-  const [abstractSectionTop, setAbstractSectionTop] = useState<number>(0)
+  const animationRef = useRef(0)
+  const [abstractSectionTop, setAbstractSectionTop] = useState(0)
   useEffect(() => {
     const animationFrame = () => {
       setAbstractSectionTop(

@@ -1,3 +1,4 @@
+import Animate from '../Animate'
 import Paragraph from '../Paragraph'
 import * as styles from './index.css'
 
@@ -14,7 +15,11 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
 }) => {
   return (
     <div className={styles.container}>
-      <img className={styles.thumbnail} src={thumbnail} />
+      <Animate
+        animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1) backwards`}
+      >
+        <img className={styles.thumbnail} src={thumbnail} />
+      </Animate>
       <h3>{title}</h3>
       <Paragraph text={shortDescription} />
     </div>

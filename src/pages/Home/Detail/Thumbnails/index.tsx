@@ -7,8 +7,8 @@ export type ThumbnailsProps = {
 
 const Thumbnails: React.FC<ThumbnailsProps> = ({ thumbnails }) => {
   const innerRef = useRef<HTMLDivElement>(null)
-  const animationRef = useRef<number>(0)
-  const [repeatDuration, setRepeatDuration] = useState<number>(0)
+  const animationRef = useRef(0)
+  const [repeatDuration, setRepeatDuration] = useState(0)
   useEffect(() => {
     const animationFrame = () => {
       animationRef.current = requestAnimationFrame(animationFrame)
