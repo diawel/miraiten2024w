@@ -4,6 +4,7 @@ import outlinedKv from '../../../assets/outlinedKv.svg'
 import kvText from '../../../assets/kvText.svg'
 import kvExclamation from '../../../assets/kvExclamation.svg'
 import kvBackground from '../../../assets/kvBackground.svg'
+import scroll from '../../../assets/scroll.svg'
 
 const Kv: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const Kv: React.FC = () => {
         </div>
       </div>
       <img className={styles.textBlock} src={kvText} />
+      <img className={styles.scroll} src={scroll} />
     </div>
   )
 }

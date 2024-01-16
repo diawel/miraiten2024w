@@ -168,3 +168,16 @@ export const exclamatoin = style({
   animation: `${rotate} 0.3s 1.2s steps(1, end) both`,
   transformOrigin: '32% 90%',
 })
+
+export const scroll = style({
+  position: 'absolute',
+  bottom: 108,
+  right: margin.siderail,
+  transform: 'translateX(50%)',
+  animation: `${fadeIn} 0.6s 2.7s backwards`,
+  '@media': {
+    [`screen and (min-width: ${breakpoint}px)`]: {
+      bottom: margin.block,
+    },
+  },
+})
