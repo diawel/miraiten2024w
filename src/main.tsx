@@ -13,6 +13,7 @@ import { asobiLoader } from './pages/Asobi/loader.ts'
 import Crowdfunding from './pages/Crowdfunding/index.tsx'
 import { crowdfundingLoader } from './pages/Crowdfunding/loader.ts'
 import GlobalLayout from './pages/GlobalLayout/index.tsx'
+import { homeLoader } from './pages/Home/loader.ts'
 
 const router = createBrowserRouter(
   [
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
         {
           path: '/',
           element: <Home />,
+          loader: homeLoader,
         },
         {
           path: '/asobi',

@@ -2,8 +2,17 @@ import * as styles from './index.css'
 import showListButton from '../../../assets/showListButton.svg'
 import Paragraph from '../../../components/Paragraph'
 import PageLink from '../../../components/PageLink'
+import Thumbnails from './Thumbnails'
 
-const Detail: React.FC = () => {
+export type DetailProps = {
+  asobiThumbnails: string[]
+  crowdfundingThumbnails: string[]
+}
+
+const Detail: React.FC<DetailProps> = ({
+  asobiThumbnails,
+  crowdfundingThumbnails,
+}) => {
   return (
     <div className={styles.container}>
       <section className={styles.section}>
@@ -29,6 +38,7 @@ const Detail: React.FC = () => {
             '私たちが考案した遊びは感覚機能に制限を設け、複数人で楽しむことができるゲームです。手遊び、カードゲーム、鬼ごっこなど、さまざまな遊びがありますので、お気に入りの遊びを見つけたり、実際に遊んで体験したりして、楽しんでいただければと思います。',
           ]}
         />
+        <Thumbnails thumbnails={asobiThumbnails} />
         <div className={styles.buttonContainer}>
           <PageLink href="/asobi">
             <img src={showListButton} />
@@ -41,6 +51,7 @@ const Detail: React.FC = () => {
             '実際のクラウドファンディングの募集ページの分析による良い点や改善点を取り入れることでより高い完成度に仕上げました。支援したいクラウドファンディングを探してみてください。',
           ]}
         />
+        <Thumbnails thumbnails={crowdfundingThumbnails} />
         <div className={styles.buttonContainer}>
           <PageLink href="/crowdfunding">
             <img src={showListButton} />
