@@ -78,9 +78,10 @@ const Detail: React.FC<DetailProps> = ({
       <section className={styles.section}>
         <h2>アクセス</h2>
         <Paragraph
-          text={
-            '〒040-0011\n北海道函館市本町24-1\nはこだてコミュニティプラザ Gスクエア4階'
-          }
+          text={[
+            '〒040-0011\n北海道函館市本町24-1\nはこだてコミュニティプラザ Gスクエア4階',
+            '2月1日(木) 10:00-14:00, 15:00-19:00\n2月2日(金) 15:00-19:00',
+          ]}
         />
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2974.7993808277797!2d140.74942041233865!3d41.789537071131654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9ef4706e5260b9%3A0x5afbdc8b12a17205!2z5Ye96aSo44Kz44Of44Ol44OL44OG44Kj44OX44Op44K2IEfjgrnjgq_jgqjjgqI!5e0!3m2!1sja!2sjp!4v1705076216357!5m2!1sja!2sjp"

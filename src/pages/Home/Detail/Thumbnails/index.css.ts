@@ -1,4 +1,5 @@
 import { keyframes, style } from '@vanilla-extract/css'
+import { breakpoint } from '../../../../utils/constants'
 
 export const container = style({
   display: 'flex',
@@ -15,8 +16,12 @@ export const inner = style({
   display: 'flex',
   alignItems: 'center',
   width: 'fit-content',
-  height: 72,
-
+  height: 92,
+  '@media': {
+    [`screen and (min-width: ${breakpoint}px)`]: {
+      height: 128,
+    },
+  },
   animation: `${slide} linear infinite`,
 })
 
