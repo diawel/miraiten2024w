@@ -19,7 +19,7 @@ const PageLink: React.FC<PageLinkProps> = ({
   const commonProps = {
     className: styles.link,
     style: {
-      textDecoration: underline ? 'underline' : 'none',
+      textDecoration: underline ? undefined : 'none',
     },
   }
   if (newTab)
