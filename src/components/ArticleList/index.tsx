@@ -1,6 +1,5 @@
 import ArticleCard from '../ArticleCard'
 import * as styles from './index.css'
-import PageLink from '../PageLink'
 
 export type ArticleAbstract = {
   id: string
@@ -14,13 +13,11 @@ export type ArticleListProps = {
   api: 'asobi' | 'crowdfunding'
 }
 
-const ArticleList: React.FC<ArticleListProps> = ({ articles, api }) => {
+const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
   return (
     <div className={styles.container}>
       {articles.map((article) => (
-        <PageLink href={`/${api}/${article.id}`} key={article.id}>
-          <ArticleCard {...article} />
-        </PageLink>
+        <ArticleCard {...article} key={article.id} />
       ))}
     </div>
   )
