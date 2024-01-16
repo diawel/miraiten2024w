@@ -10,18 +10,23 @@ const Abstract: React.FC = () => {
       flowSlider={
         <FlowSlider>
           <StepCard
-            image={import.meta.env.BASE_URL + '/assets/sample.png'}
+            image={import.meta.env.BASE_URL + '/assets/crowdfunding0.jpg'}
             number={1}
-            text="実際にグループメンバーと一緒にあそんで分析"
+            text="様々なクラウドファンディングの分析"
           />
           <StepCard
-            image={import.meta.env.BASE_URL + '/assets/sample.png'}
+            image={import.meta.env.BASE_URL + '/assets/crowdfunding1.jpg'}
             number={2}
-            text="ゲームの試作品を制作"
+            text="サービスの典型的なユーザー像を考える"
           />
           <StepCard
-            image={import.meta.env.BASE_URL + '/assets/sample.png'}
+            image={import.meta.env.BASE_URL + '/assets/crowdfunding2.jpg'}
             number={3}
+            text="企画案の発表と問題点の改善"
+          />
+          <StepCard
+            image={import.meta.env.BASE_URL + '/assets/crowdfunding3.jpg'}
+            number={4}
             text="完成"
           />
         </FlowSlider>

@@ -17,6 +17,7 @@ export const image = style({
   aspectRatio: '3 / 2',
   borderRadius: 4,
   boxShadow: `${shadowShift}px ${shadowShift}px 0px ${color.solidShadow}`,
+  objectFit: 'cover',
 })
 
 export const description = style({
