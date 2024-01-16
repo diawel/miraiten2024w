@@ -1,9 +1,9 @@
 import * as styles from './index.css'
 import menu from '../../assets/menu.svg'
 import close from '../../assets/close.svg'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import logo from '../../assets/logo.svg'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import instagram from '../../assets/instagram.svg'
 import x from '../../assets/x.svg'
 import PageLink from '../PageLink'
@@ -11,11 +11,25 @@ import PageLink from '../PageLink'
 const Menu: React.FC = () => {
   const [open, setOpen] = useState(false)
   const navigate = useNavigate()
+  const location = useLocation()
+  const intentedPath = useRef(location.pathname)
 
   useEffect(() => {
     if (open) document.body.style.overflow = 'hidden'
     else document.body.style.overflow = 'auto'
   }, [open])
+
+  useEffect(() => {
+    if (location.pathname == intentedPath.current) {
+      setOpen(false)
+    }
+  }, [location.pathname])
+
+  const show = (path: string) => {
+    intentedPath.current = path
+    if (location.pathname == intentedPath.current) setOpen(false)
+    else navigate(path)
+  }
 
   return (
     <div className={styles.container}>
@@ -31,8 +45,7 @@ const Menu: React.FC = () => {
           <button
             className={styles.clickable}
             onClick={() => {
-              setOpen(false)
-              navigate('/')
+              show('/')
             }}
           >
             <img src={logo} alt="logo" className={styles.logo} />
@@ -40,8 +53,7 @@ const Menu: React.FC = () => {
           <button
             className={styles.clickable}
             onClick={() => {
-              setOpen(false)
-              navigate('/asobi')
+              show('/asobi')
             }}
           >
             <div className={styles.link}>新しい遊びの提案</div>
@@ -49,8 +61,7 @@ const Menu: React.FC = () => {
           <button
             className={styles.clickable}
             onClick={() => {
-              setOpen(false)
-              navigate('crowdfunding')
+              show('/crowdfunding')
             }}
           >
             <div className={styles.link}>
