@@ -60,33 +60,31 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
           />
           <style>
             {`
-              .${styles.body} {
-                & img {
-                  width: 100%;
-                  height: auto;
-                }
-                & figure {
-                  margin: ${margin.siderail}px 0;
-                }
-                & :is(h3, p, ul, ol) {
-                  margin: ${margin.paragraph}px 0;
-                }
-                & h2 {
-                  margin: ${margin.section}px 0 ${margin.siderail}px;
-                }
-                & ul > li {
-                  margin-left: 1.25em;
-                  padding-left: 0.25em;
-                }
-                & ol > li {
-                  margin-left: 1.5em;
-                }
-                & > :first-child {
-                  margin-top: 0;
-                }
-                & > :last-child {
-                  margin-bottom: 0;
-                }
+              .${styles.body} img {
+                width: 100%;
+                height: auto;
+              }
+              .${styles.body} figure {
+                margin: ${margin.siderail}px 0;
+              }
+              .${styles.body} :is(h3, p, ul, ol, li) {
+                margin: ${margin.paragraph}px 0;
+              }
+              .${styles.body} h2 {
+                margin: ${margin.section}px 0 ${margin.siderail}px;
+              }
+              .${styles.body} ul > li {
+                margin-left: 1.25em;
+                padding-left: 0.25em;
+              }
+              .${styles.body} ol > li {
+                margin-left: 1.5em;
+              }
+              .${styles.body} > :first-child {
+                margin-top: 0;
+              }
+              .${styles.body} > :last-child {
+                margin-bottom: 0;
               }
             `}
           </style>
