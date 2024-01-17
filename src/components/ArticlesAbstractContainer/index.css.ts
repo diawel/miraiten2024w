@@ -22,6 +22,7 @@ export const titleSection = style({
 
 export const flowSection = style({
   maxWidth: 640 - margin.siderail * 2,
+  width: '100%',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
