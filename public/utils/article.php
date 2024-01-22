@@ -28,10 +28,11 @@ function read_article($article) {
         true
       );
       preg_match('/\/\/speakerdeck\.com\/player\/\w+/', $oembed['html'], $match);
-      $article['slide'] = [
+      if (isset($match[0])) $article['slide'] = [
         'url' => 'https:' . $match[0],
         'type' => 'speakerdeck'
       ];
+      else $article['slide'] = null;
     }
     else $article['slide'] = null;
   }
