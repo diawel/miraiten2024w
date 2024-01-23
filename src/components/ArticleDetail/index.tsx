@@ -8,6 +8,7 @@ import PageLink from '../PageLink'
 import { ArticleAbstract } from '../ArticleList'
 import ArticleListSmall from '../ArticleListSmall'
 import voteButton from '../../assets/voteButton.svg'
+import Disabled from '../Disabled'
 
 export type ArticleDetailProps = {
   id: string
@@ -113,9 +114,9 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
       )}
 
       <div className={styles.buttonContainer}>
-        <PageLink href="https://docs.google.com/forms" newTab>
+        <Disabled>
           <img src={voteButton} />
-        </PageLink>
+        </Disabled>
       </div>
       <ArticleListSmall
         articles={articles.filter((article) => article.id != id)}
