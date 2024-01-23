@@ -26,6 +26,7 @@ const ArticleAbstract: React.FC<ArticleAbstractProps> = ({
             'https://youtu.be/',
             'https://www.youtube.com/embed/'
           )}
+          key={mainVideo}
           allowFullScreen
         />
       ) : (
