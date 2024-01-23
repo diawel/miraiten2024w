@@ -13,7 +13,7 @@ if (preg_match("/Twitterbot|facebookexternalhit|line-poker|Discordbot|SkypeUriPr
     <head>
       <meta property="og:title" content="はこだて未来展2024 FUN!tasista!" />
       <meta property="og:url" content="https://fundesign.jp/miraiten2024w/" />
-      <meta property="og:description" content="公立はこだて未来大学の情報デザインコースに所属する2年生が主催する作品展覧会です。2024年2月1日、2日に開催します。" />
+      <meta property="og:description" content="公立はこだて未来大学の情報デザインコースに所属する2年生が主催する作品展覧会です。2024年2月1日・2日に、シエスタハコダテ4F Gスクエアで開催します。" />
       <meta property="og:image" content="<?php
         $thumbnail = 'https://fundesign.jp/miraiten2024w/assets/ogp.png';
         if (preg_match('/\/(asobi|crowdfunding)\/[\w-]+$/', $_SERVER['REQUEST_URI'], $match)) {
