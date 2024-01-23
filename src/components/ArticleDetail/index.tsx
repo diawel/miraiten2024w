@@ -49,6 +49,7 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
         <iframe
           className={styles.slide}
           src={slide.type == 'canva' ? `${slide.url}?embed` : slide.url}
+          key={slide.url}
           allowFullScreen
         />
       )}
