@@ -20,18 +20,18 @@ function read_article($article) {
         'url' => $article['slide'],
         'type' => 'canva'
       ];
-    elseif (str_starts_with($article['slide'], 'https://speakerdeck.com/')) {
+    else if (str_starts_with($article['slide'], 'https://speakerdeck.com/')) {
       $oembed = json_decode(
         file_get_contents(
           'https://speakerdeck.com/oembed.json?url=' . $article['slide']
         ),
         true
       );
-      preg_match('/\/\/speakerdeck\.com\/player\/\w+/', $oembed['html'], $match);
-      if (isset($match[0])) $article['slide'] = [
-        'url' => 'https:' . $match[0],
-        'type' => 'speakerdeck'
-      ];
+      if (preg_match('/\/\/speakerdeck\.com\/player\/\w+/', $oembed['html'], $match))
+        $article['slide'] = [
+          'url' => 'https:' . $match[0],
+          'type' => 'speakerdeck'
+        ];
       else $article['slide'] = null;
     }
     else $article['slide'] = null;
