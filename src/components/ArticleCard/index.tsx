@@ -16,7 +16,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   return (
     <div className={styles.container}>
       <Animate
-        animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1) backwards`}
+        animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1)`}
       >
         <img className={styles.thumbnail} src={thumbnail} />
       </Animate>

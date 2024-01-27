@@ -17,7 +17,7 @@ const Detail: React.FC<DetailProps> = ({
   return (
     <div className={styles.container}>
       <Animate
-        animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1) backwards`}
+        animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1)`}
       >
         <section className={styles.section}>
           <h2>はこだて未来展とは</h2>
@@ -31,7 +31,7 @@ const Detail: React.FC<DetailProps> = ({
         </section>
       </Animate>
       <Animate
-        animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1) backwards`}
+        animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1)`}
       >
         <section className={styles.section}>
           <h2>FUN!tasista!とは</h2>
@@ -80,7 +80,7 @@ const Detail: React.FC<DetailProps> = ({
         </Animate>
       </section>
       <Animate
-        animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1) backwards`}
+        animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1)`}
       >
         <section className={styles.section}>
           <h2>前回開催の様子</h2>
@@ -101,7 +101,7 @@ const Detail: React.FC<DetailProps> = ({
         </section>
       </Animate>
       <Animate
-        animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1) backwards`}
+        animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1)`}
       >
         <section className={styles.section}>
           <h2>アクセス</h2>

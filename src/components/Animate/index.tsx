@@ -7,13 +7,14 @@ export type AnimateProps = {
 const Animate: React.FC<AnimateProps> = ({ children, animation }) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const animationRef = useRef(0)
-  const [inDisplay, setInDisplay] = useState<boolean>(false)
+  const [hasDisplayed, setHasDisplayed] = useState<boolean>(false)
   useEffect(() => {
+    if (hasDisplayed) return
     const animationFrame = () => {
       const container = containerRef.current
       if (!container) return
       const rect = container.getBoundingClientRect()
-      setInDisplay(rect.top < document.documentElement.clientHeight * 0.8)
+      setHasDisplayed(rect.top < document.documentElement.clientHeight * 0.8)
       animationRef.current = requestAnimationFrame(animationFrame)
     }
     animationRef.current = requestAnimationFrame(animationFrame)
@@ -21,13 +22,13 @@ const Animate: React.FC<AnimateProps> = ({ children, animation }) => {
     return () => {
       if (animationRef.current) cancelAnimationFrame(animationRef.current)
     }
-  }, [])
+  }, [hasDisplayed])
   return (
     <div
       ref={containerRef}
       style={{
         animation,
-        animationPlayState: inDisplay ? 'running' : 'paused',
+        animationPlayState: hasDisplayed ? 'running' : 'paused',
       }}
     >
       {children}
