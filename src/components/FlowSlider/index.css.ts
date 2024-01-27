@@ -16,11 +16,9 @@ export const clickable = style({
 
 const slideIn = keyframes({
   from: {
-    opacity: 0,
     transform: 'translateX(48px)',
   },
   to: {
-    opacity: 1,
     transform: 'translateX(0)',
   },
 })

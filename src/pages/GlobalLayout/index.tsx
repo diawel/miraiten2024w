@@ -14,11 +14,13 @@ const GlobalLayout: React.FC = () => {
   return (
     <PagingAnimationContext.Provider value={setAnimateTo}>
       <div className={styles.frameBorder.top} />
-      <Outlet />
+      <div className={styles.content}>
+        <Outlet />
+      </div>
       <div className={styles.frameBorder.bottom} />
       <Footer />
-      <Menu />
       <PagingAnimation {...{ animateTo, setAnimateTo }} />
+      <Menu />
       <ScrollRestoration />
     </PagingAnimationContext.Provider>
   )

@@ -48,3 +48,7 @@ export const frameBorder = styleVariants({
     },
   ],
 })
+
+export const content = style({
+  backgroundColor: color.primaryWhite,
+})

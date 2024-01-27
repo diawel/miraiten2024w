@@ -4,7 +4,7 @@ import { color } from '../../../utils/constants'
 const overlayBase = style({
   position: 'fixed',
   top: 0,
-  zIndex: 3000,
+  zIndex: 2000,
   width: '100%',
   height: '100vh',
   backgroundColor: color.primaryWhite,
