@@ -35,12 +35,6 @@ const Thumbnails: React.FC<ThumbnailsProps> = ({ thumbnails }) => {
         {thumbnails.map((thumbnail) => (
           <img key={thumbnail} className={styles.thumbnail} src={thumbnail} />
         ))}
-        {thumbnails.map((thumbnail) => (
-          <img key={thumbnail} className={styles.thumbnail} src={thumbnail} />
-        ))}
-        {thumbnails.map((thumbnail) => (
-          <img key={thumbnail} className={styles.thumbnail} src={thumbnail} />
-        ))}
       </div>
     </div>
   )

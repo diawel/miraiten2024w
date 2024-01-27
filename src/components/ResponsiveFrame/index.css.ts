@@ -30,6 +30,7 @@ export const abstractSection = style({
       width: '40%',
       height: 'calc(100vh - 4px)',
       overflowY: 'auto',
+      top: '2px !important',
     },
   },
 })
@@ -44,6 +45,7 @@ export const abstractSectionInner = style({
       height: 'fit-content',
       minHeight: 'calc(100vh - 4px)',
       alignItems: 'center',
+      paddingBottom: 'calc(100vh - 100dvh)',
     },
   },
 })

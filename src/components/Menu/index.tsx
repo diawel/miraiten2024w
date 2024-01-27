@@ -20,9 +20,7 @@ const Menu: React.FC = () => {
   }, [open])
 
   useEffect(() => {
-    if (location.pathname == intentedPath.current) {
-      setOpen(false)
-    }
+    if (location.pathname == intentedPath.current) setOpen(false)
   }, [location.pathname])
 
   const show = (path: string) => {

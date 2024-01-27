@@ -18,7 +18,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles, api }) => {
   return (
     <div className={styles.container}>
       {articles.map((article) => (
-        <PageLink href={`/${api}/${article.id}`} key={article.id}>
+        <PageLink href={`/${api}/${article.id}`} key={article.id} animate>
           <ArticleCard {...article} />
         </PageLink>
       ))}
