@@ -1,4 +1,4 @@
-import { margin } from '../../utils/constants'
+import { asobiOrder, crowdfundingOrder, margin } from '../../utils/constants'
 import { Slide } from '../../pages/Asobi/loader'
 import * as styles from './index.css'
 import MobileOnly from '../MobileOnly'
@@ -8,9 +8,10 @@ import PageLink from '../PageLink'
 import { ArticleAbstract } from '../ArticleList'
 import ArticleListSmall from '../ArticleListSmall'
 import voteButton from '../../assets/voteButton.svg'
+import { orderArticles } from '../../utils/article'
 
 export type ArticleDetailProps = {
-  id: string
+  team: number
   title: string
   shortDescription: string
   description?: string
@@ -22,11 +23,13 @@ export type ArticleDetailProps = {
   webDescription?: string
   webUrl?: string
   api: 'asobi' | 'crowdfunding'
-  articles: ArticleAbstract[]
+  articles: (ArticleAbstract & {
+    team: number
+  })[]
 }
 
 const ArticleDetail: React.FC<ArticleDetailProps> = ({
-  id,
+  team,
   title,
   shortDescription,
   description,
@@ -40,6 +43,12 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
   api,
   articles,
 }) => {
+  const articleOrder = api == 'asobi' ? asobiOrder : crowdfundingOrder
+  const index = articleOrder.findIndex((teamIndex) => teamIndex === team)
+  const modifiedArticleOrder = [
+    ...articleOrder.slice(index + 1),
+    ...articleOrder.slice(0, index),
+  ]
   return (
     <div className={styles.container}>
       <MobileOnly>
@@ -119,7 +128,7 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
         </PageLink>
       </div>
       <ArticleListSmall
-        articles={articles.filter((article) => article.id != id)}
+        articles={orderArticles(articles, modifiedArticleOrder)}
         {...{ api }}
       />
     </div>

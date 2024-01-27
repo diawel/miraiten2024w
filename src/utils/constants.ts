@@ -39,3 +39,7 @@ export const gridBackground = {
   backgroundImage: 'url(/assets/grid.png)',
   backgroundSize: 20,
 }
+
+export const asobiOrder = [7, 2, 6, 9, 10, 3, 8, 1, 4, 5]
+
+export const crowdfundingOrder = [1, 2, 8, 3, 5, 7, 6, 4]
