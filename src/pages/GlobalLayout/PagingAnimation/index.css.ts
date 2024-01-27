@@ -6,7 +6,7 @@ const overlayBase = style({
   top: 0,
   zIndex: 2000,
   width: '100%',
-  height: '100vh',
+  height: '100dvh',
   backgroundColor: color.primaryWhite,
   border: `solid ${color.borderBlack}`,
   borderWidth: '2px 0',
