@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import * as styles from './index.css'
+import { useContext } from 'react'
+import { PagingAnimationContext } from '../../pages/GlobalLayout'
 
 export type PageLinkProps = {
   href: string
@@ -7,6 +9,7 @@ export type PageLinkProps = {
   newTab?: boolean
   underline?: boolean
   forceReload?: boolean
+  animate?: boolean
 }
 
 const PageLink: React.FC<PageLinkProps> = ({
@@ -15,6 +18,7 @@ const PageLink: React.FC<PageLinkProps> = ({
   newTab,
   underline,
   forceReload,
+  animate,
 }) => {
   const commonProps = {
     className: styles.link,
@@ -22,6 +26,7 @@ const PageLink: React.FC<PageLinkProps> = ({
       textDecoration: underline ? undefined : 'none',
     },
   }
+  const animateTo = useContext(PagingAnimationContext)
   if (newTab)
     return (
       <a
@@ -41,6 +46,21 @@ const PageLink: React.FC<PageLinkProps> = ({
         {...commonProps}
         {...{
           href,
+        }}
+      >
+        {children}
+      </a>
+    )
+  if (animate)
+    return (
+      <a
+        {...commonProps}
+        {...{
+          href,
+        }}
+        onClick={(e) => {
+          e.preventDefault()
+          animateTo(href)
         }}
       >
         {children}

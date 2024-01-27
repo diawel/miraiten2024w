@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css'
+import { keyframes, style } from '@vanilla-extract/css'
 import { margin } from '../../utils/constants'
 
 export const container = style({
@@ -14,6 +14,17 @@ export const clickable = style({
   appearance: 'none',
 })
 
+const slideIn = keyframes({
+  from: {
+    opacity: 0,
+    transform: 'translateX(48px)',
+  },
+  to: {
+    opacity: 1,
+    transform: 'translateX(0)',
+  },
+})
+
 export const slider = style({
   position: 'relative',
   display: 'flex',
@@ -26,6 +37,7 @@ export const slider = style({
   overflowX: 'auto',
   scrollSnapType: 'x mandatory',
   scrollbarWidth: 'none',
+  animation: `${slideIn} 0.9s cubic-bezier(0, 0.6, 0.4, 1)`,
   '::-webkit-scrollbar': {
     display: 'none',
   },

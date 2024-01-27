@@ -40,7 +40,7 @@ const Detail: React.FC<DetailProps> = ({
       </Animate>
       <section>
         <Animate
-          animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1) backwards`}
+          animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1)`}
         >
           <div className={styles.section}>
             <h2>展示内容</h2>
@@ -53,14 +53,14 @@ const Detail: React.FC<DetailProps> = ({
             />
             <Thumbnails thumbnails={asobiThumbnails} />
             <div className={styles.buttonContainer}>
-              <PageLink href="/asobi">
+              <PageLink href="/asobi" animate>
                 <img src={showListButton} />
               </PageLink>
             </div>
           </div>
         </Animate>
         <Animate
-          animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1) backwards`}
+          animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1)`}
         >
           <div className={styles.section}>
             <h3>人に寄り添うサービス・アイテムの提案</h3>
@@ -72,7 +72,7 @@ const Detail: React.FC<DetailProps> = ({
             />
             <Thumbnails thumbnails={crowdfundingThumbnails} />
             <div className={styles.buttonContainer}>
-              <PageLink href="/crowdfunding">
+              <PageLink href="/crowdfunding" animate>
                 <img src={showListButton} />
               </PageLink>
             </div>

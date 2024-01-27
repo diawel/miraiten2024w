@@ -16,7 +16,7 @@ const ArticleListSmall: React.FC<ArticleListSmallProps> = ({
     <div className={styles.container}>
       <h3 className={styles.title}>他の作品を見る</h3>
       {articles.map((article) => (
-        <PageLink href={`/${api}/${article.id}`} key={article.id}>
+        <PageLink href={`/${api}/${article.id}`} key={article.id} animate>
           <ArticleCardSmall {...article} />
         </PageLink>
       ))}

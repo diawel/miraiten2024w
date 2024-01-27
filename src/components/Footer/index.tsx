@@ -9,10 +9,10 @@ const Footer: React.FC = () => {
         <PageLink href="/">
           <img src={logo} alt="logo" className={styles.logo} />
         </PageLink>
-        <PageLink href="/asobi" underline={false}>
+        <PageLink href="/asobi" underline={false} animate>
           - 新しい遊びの提案
         </PageLink>
-        <PageLink href="/crowdfunding" underline={false}>
+        <PageLink href="/crowdfunding" underline={false} animate>
           - 人に寄り添うサービス・アイテムの提案
         </PageLink>
       </div>
