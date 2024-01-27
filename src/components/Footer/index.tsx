@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   return (
     <footer className={styles.container}>
       <div className={styles.list}>
-        <PageLink href="/">
+        <PageLink href="/" animate>
           <img src={logo} alt="logo" className={styles.logo} />
         </PageLink>
         <PageLink href="/asobi" underline={false} animate>
