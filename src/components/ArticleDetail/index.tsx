@@ -11,6 +11,7 @@ import voteButton from '../../assets/voteButton.svg'
 import { orderArticles } from '../../utils/article'
 
 export type ArticleDetailProps = {
+  id: string
   team: number
   title: string
   shortDescription: string
@@ -29,6 +30,7 @@ export type ArticleDetailProps = {
 }
 
 const ArticleDetail: React.FC<ArticleDetailProps> = ({
+  id,
   team,
   title,
   shortDescription,
@@ -50,7 +52,7 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
     ...articleOrder.slice(0, index),
   ]
   return (
-    <div className={styles.container}>
+    <div className={styles.container} key={id}>
       <MobileOnly>
         <TitleSection {...{ title, shortDescription, description }} />
       </MobileOnly>
