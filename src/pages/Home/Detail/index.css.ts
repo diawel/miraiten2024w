@@ -17,11 +17,18 @@ export const section = style({
   width: '100%',
 })
 
+export const sectionGroup = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: margin.block,
+  width: '100%',
+})
+
 export const buttonContainer = style({
   display: 'flex',
   justifyContent: 'center',
   width: '100%',
-  padding: `${margin.paragraph}px 0 ${margin.siderail}px`,
+  padding: `${margin.paragraph}px 0`,
 })
 
 export const image = style({

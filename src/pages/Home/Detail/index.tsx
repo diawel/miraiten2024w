@@ -38,7 +38,7 @@ const Detail: React.FC<DetailProps> = ({
           <Paragraph text="公立はこだて未来大学をアルファベットで表した「FUN」、楽しさを指す「fun」、創造力に長けた多芸多才な人を指す「fantasista」。これらを掛け合わせた「FUN!tasista!」は、本校ならではのひらめきと楽しさで様々なものを創造する集団を表しています。" />
         </section>
       </Animate>
-      <section>
+      <section className={styles.sectionGroup}>
         <Animate
           animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1)`}
         >
