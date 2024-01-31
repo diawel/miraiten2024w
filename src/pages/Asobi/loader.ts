@@ -1,7 +1,4 @@
-export type Slide = {
-  url: string
-  type: 'canva' | 'speakerdeck'
-}
+import { Slide } from '../../components/ArticleDetail'
 
 export type AsobiLoaderData = {
   article: {

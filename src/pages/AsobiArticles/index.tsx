@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom'
 import { AsobiArticlesLoaderData } from './loader'
 import ResponsiveFrame from '../../components/ResponsiveFrame'
 import Abstract from './Abstract'
-import Detail from './Detail'
+import ArticlesDetail from '../../components/ArticlesDetail'
 
 const AsobiArticles: React.FC = () => {
   const { articles } = useLoaderData() as AsobiArticlesLoaderData
@@ -12,7 +12,7 @@ const AsobiArticles: React.FC = () => {
       <InitPage pageTitle="新しい遊びの提案" />
       <ResponsiveFrame
         abstractSection={<Abstract />}
-        detailSection={<Detail {...{ articles }} />}
+        detailSection={<ArticlesDetail api="asobi" {...{ articles }} />}
       />
     </>
   )

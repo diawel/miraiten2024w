@@ -32,6 +32,11 @@ const frameBorderBase = style({
   position: 'sticky',
   width: '100%',
   zIndex: 1000,
+  '@media': {
+    print: {
+      position: 'static',
+    },
+  },
 })
 
 export const frameBorder = styleVariants({

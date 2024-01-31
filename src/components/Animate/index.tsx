@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import * as styles from './index.css'
+
 export type AnimateProps = {
   children: React.ReactNode
   animation: string
@@ -23,9 +25,11 @@ const Animate: React.FC<AnimateProps> = ({ children, animation }) => {
       if (animationRef.current) cancelAnimationFrame(animationRef.current)
     }
   }, [hasDisplayed])
+
   return (
     <div
       ref={containerRef}
+      className={styles.container}
       style={{
         animation,
         animationPlayState: hasDisplayed ? 'running' : 'paused',

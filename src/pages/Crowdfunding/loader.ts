@@ -1,7 +1,4 @@
-export type Slide = {
-  url: string
-  type: 'canva' | 'speakerdeck'
-}
+import { Slide, SlideType } from '../../components/ArticleDetail'
 
 export type CrowdfundingLoaderData = {
   article: {
@@ -17,6 +14,7 @@ export type CrowdfundingLoaderData = {
     mainVideo?: string
     description?: string
     slide?: Slide
+    slideType?: SlideType
     body?: string
     webCapture?: string
     webDescription?: string

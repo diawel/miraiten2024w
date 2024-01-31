@@ -35,6 +35,7 @@ export const slider = style({
   overflowX: 'auto',
   scrollSnapType: 'x mandatory',
   scrollbarWidth: 'none',
+  cursor: 'pointer',
   animation: `${slideIn} 0.9s cubic-bezier(0, 0.6, 0.4, 1)`,
   '::-webkit-scrollbar': {
     display: 'none',
