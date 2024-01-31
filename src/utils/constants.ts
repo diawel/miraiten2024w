@@ -40,6 +40,14 @@ export const gridBackground = {
   backgroundSize: 20,
 }
 
-export const asobiOrder = [7, 2, 6, 9, 10, 3, 8, 1, 4, 5]
+export const articleOrder = {
+  asobi: [7, 2, 6, 9, 10, 3, 8, 1, 4, 5],
+  crowdfunding: [1, 2, 8, 3, 5, 7, 6, 4],
+}
 
-export const crowdfundingOrder = [1, 2, 8, 3, 5, 7, 6, 4]
+export const formUrl = {
+  asobi:
+    'https://docs.google.com/forms/d/e/1FAIpQLSewpnrIMByFNBA9Vs-Y98_E0yuVXcU3_yus5VXWe64Ada1SKQ/viewform?usp=sf_link',
+  crowdfunding:
+    'https://docs.google.com/forms/d/e/1FAIpQLScK0xOIB3beQVHhFMYg4GxKuhIkO6W7UhZrNCoZs_a8bGbddw/viewform?usp=sf_link',
+}

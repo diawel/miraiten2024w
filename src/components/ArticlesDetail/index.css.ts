@@ -1,5 +1,5 @@
 import { keyframes, style } from '@vanilla-extract/css'
-import { breakpoint, margin } from '../../../utils/constants'
+import { breakpoint, margin } from '../../utils/constants'
 
 const slideIn = keyframes({
   '0%': { opacity: 0, transform: 'translateY(24px)' },

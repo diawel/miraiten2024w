@@ -1,4 +1,4 @@
-import { asobiOrder, crowdfundingOrder, margin } from '../../utils/constants'
+import { articleOrder, formUrl, margin } from '../../utils/constants'
 import * as styles from './index.css'
 import MobileOnly from '../MobileOnly'
 import TitleSection from '../TitleSection'
@@ -54,11 +54,10 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
   api,
   articles,
 }) => {
-  const articleOrder = api == 'asobi' ? asobiOrder : crowdfundingOrder
-  const index = articleOrder.findIndex((teamIndex) => teamIndex === team)
+  const index = articleOrder[api].findIndex((teamIndex) => teamIndex === team)
   const modifiedArticleOrder = [
-    ...articleOrder.slice(index + 1),
-    ...articleOrder.slice(0, index),
+    ...articleOrder[api].slice(index + 1),
+    ...articleOrder[api].slice(0, index),
   ]
   return (
     <div className={styles.container} key={id}>
@@ -140,7 +139,7 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
       )}
 
       <div className={styles.buttonContainer}>
-        <PageLink href="https://docs.google.com/forms" newTab>
+        <PageLink href={formUrl[api]} newTab>
           <img src={voteButton} />
         </PageLink>
       </div>
