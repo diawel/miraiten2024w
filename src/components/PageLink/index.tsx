@@ -10,6 +10,7 @@ export type PageLinkProps = {
   underline?: boolean
   forceReload?: boolean
   animate?: boolean
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>
 }
 
 const PageLink: React.FC<PageLinkProps> = ({
@@ -19,45 +20,42 @@ const PageLink: React.FC<PageLinkProps> = ({
   underline,
   forceReload,
   animate,
+  onClick,
 }) => {
   const commonProps = {
     className: styles.link,
     style: {
       textDecoration: underline ? undefined : 'none',
     },
+    onClick,
   }
+
+  const modifiedHref = href.startsWith('/')
+    ? import.meta.env.BASE_URL + href
+    : href
   const animateTo = useContext(PagingAnimationContext)
   if (newTab)
     return (
       <a
         target="_blank"
         rel="noopener noreferrer"
+        href={modifiedHref}
         {...commonProps}
-        {...{
-          href,
-        }}
       >
         {children}
       </a>
     )
   if (forceReload)
     return (
-      <a
-        {...commonProps}
-        {...{
-          href,
-        }}
-      >
+      <a href={modifiedHref} {...commonProps}>
         {children}
       </a>
     )
   if (animate)
     return (
       <a
+        href={modifiedHref}
         {...commonProps}
-        {...{
-          href,
-        }}
         onClick={(e) => {
           e.preventDefault()
           animateTo(href)

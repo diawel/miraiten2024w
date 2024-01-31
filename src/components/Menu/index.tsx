@@ -40,32 +40,35 @@ const Menu: React.FC = () => {
         }
       >
         <div className={styles.contentContainerInner}>
-          <button
-            className={styles.clickable}
-            onClick={() => {
+          <PageLink
+            href="/"
+            onClick={(e) => {
+              e.preventDefault()
               show('/')
             }}
           >
             <img src={logo} alt="logo" className={styles.logo} />
-          </button>
-          <button
-            className={styles.clickable}
-            onClick={() => {
+          </PageLink>
+          <PageLink
+            href="/asobi"
+            onClick={(e) => {
+              e.preventDefault()
               show('/asobi')
             }}
           >
             <div className={styles.link}>新しい遊びの提案</div>
-          </button>
-          <button
-            className={styles.clickable}
-            onClick={() => {
+          </PageLink>
+          <PageLink
+            href="/crowdfunding"
+            onClick={(e) => {
+              e.preventDefault()
               show('/crowdfunding')
             }}
           >
             <div className={styles.link}>
               人に寄り添うサービス・アイテムの提案
             </div>
-          </button>
+          </PageLink>
           <div className={styles.snsContainer}>
             <PageLink href="https://www.instagram.com/miraiten2024" newTab>
               <img src={instagram} className={styles.snsIcon} />
