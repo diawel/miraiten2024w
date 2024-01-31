@@ -14,6 +14,11 @@ export const container = style({
   width: '100%',
   height: 0,
   overflow: 'visible',
+  '@media': {
+    print: {
+      display: 'none',
+    },
+  },
 })
 
 const backgroundBase = style({
