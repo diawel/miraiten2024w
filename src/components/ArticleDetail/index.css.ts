@@ -23,6 +23,12 @@ export const section = style({
   gap: margin.siderail,
 })
 
+export const slideContainer = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: margin.minimum,
+})
+
 export const slide = style({
   width: '100%',
   aspectRatio: '16 / 9',

@@ -1,5 +1,4 @@
 import { asobiOrder, crowdfundingOrder, margin } from '../../utils/constants'
-import { Slide } from '../../pages/Asobi/loader'
 import * as styles from './index.css'
 import MobileOnly from '../MobileOnly'
 import TitleSection from '../TitleSection'
@@ -9,6 +8,14 @@ import { ArticleAbstract } from '../ArticleList'
 import ArticleListSmall from '../ArticleListSmall'
 import voteButton from '../../assets/voteButton.svg'
 import { orderArticles } from '../../utils/article'
+import SlideTypeIndicator from './SlideTypeIndicator'
+
+export type Slide = {
+  url: string
+  type: 'canva' | 'speakerdeck'
+}
+
+export type SlideType = ('発表資料' | '紹介スライド')[]
 
 export type ArticleDetailProps = {
   id: string
@@ -17,6 +24,7 @@ export type ArticleDetailProps = {
   shortDescription: string
   description?: string
   slide?: Slide
+  slideType?: SlideType
   body?: string
   poster?: string
   posterDescription?: string
@@ -36,6 +44,7 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
   shortDescription,
   description,
   slide,
+  slideType,
   body,
   poster,
   posterDescription,
@@ -57,12 +66,18 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({
         <TitleSection {...{ title, shortDescription, description }} />
       </MobileOnly>
       {slide && (
-        <iframe
-          className={styles.slide}
-          src={slide.type == 'canva' ? `${slide.url}?embed` : slide.url}
-          key={slide.url}
-          allowFullScreen
-        />
+        <div className={styles.section}>
+          {api == 'asobi' && <h2>発表資料</h2>}
+          <div className={styles.slideContainer}>
+            <iframe
+              className={styles.slide}
+              src={slide.type == 'canva' ? `${slide.url}?embed` : slide.url}
+              key={slide.url}
+              allowFullScreen
+            />
+            {slideType && <SlideTypeIndicator slideType={slideType} />}
+          </div>
+        </div>
       )}
       {body && (
         <>
