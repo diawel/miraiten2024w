@@ -34,6 +34,8 @@ const PageLink: React.FC<PageLinkProps> = ({
     ? import.meta.env.BASE_URL + href
     : href
   const animateTo = useContext(PagingAnimationContext)
+
+  const linkInner = <div className={styles.linkInner}>{children}</div>
   if (newTab)
     return (
       <a
@@ -42,13 +44,13 @@ const PageLink: React.FC<PageLinkProps> = ({
         href={modifiedHref}
         {...commonProps}
       >
-        {children}
+        {linkInner}
       </a>
     )
   if (forceReload)
     return (
       <a href={modifiedHref} {...commonProps}>
-        {children}
+        {linkInner}
       </a>
     )
   if (animate)
@@ -61,12 +63,12 @@ const PageLink: React.FC<PageLinkProps> = ({
           animateTo(href)
         }}
       >
-        {children}
+        {linkInner}
       </a>
     )
   return (
     <Link {...commonProps} {...{ to: href }}>
-      {children}
+      {linkInner}
     </Link>
   )
 }
