@@ -31,17 +31,23 @@ export const asobiLoader = async (
   id: string,
   draftKey?: string
 ): Promise<AsobiLoaderData> => {
-  const articles = await fetch(
-    import.meta.env.BASE_URL + '/cms/articles/asobi/list.json',
-    {
-      cache: 'no-cache',
-    }
-  )
   const article = await fetch(
     draftKey
       ? import.meta.env.BASE_URL +
           `/cms/articles/asobi/draft.php?id=${id}&draftKey=${draftKey}`
       : import.meta.env.BASE_URL + `/cms/articles/asobi/${id}.json`,
+    {
+      cache: 'no-cache',
+    }
+  )
+  if (article.headers.get('content-type') != 'application/json')
+    return {
+      article: null,
+      articles: [],
+    }
+
+  const articles = await fetch(
+    import.meta.env.BASE_URL + '/cms/articles/asobi/list.json',
     {
       cache: 'no-cache',
     }
