@@ -123,14 +123,14 @@ const slideIn = keyframes({
 export const textBlock = style({
   position: 'absolute',
   left: 0,
-  bottom: margin.siderail,
-  width: '75%',
-  maxWidth: 360,
+  bottom: margin.block,
+  width: '80%',
+  maxWidth: 400,
   animation: `${slideIn} 0.6s 2.1s cubic-bezier(0, 0.6, 0.4, 1) backwards`,
   '@media': {
     [`screen and (min-width: ${breakpoint}px)`]: {
       maxWidth: 420,
-      bottom: margin.block,
+      bottom: margin.section,
     },
   },
 })

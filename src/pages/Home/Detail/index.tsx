@@ -104,7 +104,7 @@ const Detail: React.FC<DetailProps> = ({
         animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1)`}
       >
         <section className={styles.section}>
-          <h2>アクセス</h2>
+          <h2>Gスクエア会場</h2>
           <Paragraph
             text={[
               '〒040-0011\n北海道函館市本町24-1 シエスタハコダテ4階\nはこだてコミュニティプラザ Gスクエア',
@@ -113,6 +113,26 @@ const Detail: React.FC<DetailProps> = ({
           />
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2974.7993808277797!2d140.74942041233865!3d41.789537071131654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9ef4706e5260b9%3A0x5afbdc8b12a17205!2z5Ye96aSo44Kz44Of44Ol44OL44OG44Kj44OX44Op44K2IEfjgrnjgq_jgqjjgqI!5e0!3m2!1sja!2sjp!4v1705076216357!5m2!1sja!2sjp"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className={styles.map}
+          />
+        </section>
+      </Animate>
+      <Animate
+        animation={`${styles.showBlock} 0.9s cubic-bezier(0, 0.6, 0.4, 1)`}
+      >
+        <section className={styles.section}>
+          <h2>はこだてみらい館会場</h2>
+          <Paragraph
+            text={[
+              '〒040-0063\n北海道函館市若松町20-1 キラリス函館3階\nはこだてみらい館',
+              '5月11日(土), 5月12日(日) 10:00-17:00',
+            ]}
+          />
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2975.5713294842935!2d140.72588837585883!3d41.77289927125353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9ef39f15f787b5%3A0x11d76306f299e23!2z44Gv44GT44Gg44Gm44G_44KJ44GE6aSo!5e0!3m2!1sja!2sjp!4v1715136490989!5m2!1sja!2sjp"
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
