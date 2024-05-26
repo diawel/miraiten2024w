@@ -19,7 +19,8 @@ if (
 )
   file_put_contents(
     $article_path . '/' . $data['contents']['new']['id'] . '.json',
-    json_encode(read_article($data['contents']['new']['publishValue']))
+    json_encode(read_article($data['contents']['new']['publishValue'])),
+    LOCK_EX
   );
 
 update_article_list($data['api']);

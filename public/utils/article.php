@@ -70,7 +70,8 @@ function update_article_list($api) {
   
   file_put_contents(
     $article_path . '/list.json',
-    json_encode($articles)
+    json_encode($articles),
+    LOCK_EX
   );
 }
 
@@ -82,7 +83,8 @@ function update_all_articles($api) {
   foreach ($list['contents'] as $article) {
     file_put_contents(
       $article_path . '/' . $article['id'] . '.json',
-      json_encode(read_article($article))
+      json_encode(read_article($article)),
+      LOCK_EX
     );
   }
 }

@@ -13,7 +13,8 @@ if ($data['old'])
 if ($data['new'])
   file_put_contents(
     $media_path . '/' . gen_file_name($data['new']['url']),
-    file_get_contents($data['new']['url'] . '?w=2048')
+    file_get_contents($data['new']['url'] . '?w=2048'),
+    LOCK_EX
   );
 
 if ($data['type'] == 'edit') {
