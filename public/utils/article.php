@@ -1,5 +1,6 @@
 <?php
 require_once 'filepath.php';
+require_once 'api.php';
 
 $cms_path = '../cms';
 $base_path = '/miraiten2024w';
@@ -58,22 +59,7 @@ function read_article($article) {
 function update_article_list($api) {
   global $cms_path, $media_base_path;
   $article_path = $cms_path . '/articles/' . $api;
-
-  $curl = curl_init(
-    'https://miraiten2024w.microcms.io/api/v1/' .
-    $api .
-    '?fields=id,team,thumbnail,title,shortDescription&orders=team'
-  );
-  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($curl, CURLOPT_TIMEOUT, 10);
-  curl_setopt($curl, CURLOPT_HTTPHEADER, [
-    'X-MICROCMS-API-KEY: uLBwOhH85QkCRSRqj5GgP5MwQmuQMTyKjfx7',
-  ]);
-  $list = json_decode(
-    curl_exec($curl),
-    true
-  );
-  curl_close($curl);
+  $list = cms_get_contents($api . '?fields=id,team,thumbnail,title,shortDescription&orders=team');
   
   $articles = [];
   foreach ($list['contents'] as $article) {
@@ -91,20 +77,7 @@ function update_article_list($api) {
 function update_all_articles($api) {
   global $cms_path;
   $article_path = $cms_path . '/articles/' . $api;
-
-  $curl = curl_init(
-    'https://miraiten2024w.microcms.io/api/v1/' . $api
-  );
-  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($curl, CURLOPT_TIMEOUT, 10);
-  curl_setopt($curl, CURLOPT_HTTPHEADER, [
-    'X-MICROCMS-API-KEY: uLBwOhH85QkCRSRqj5GgP5MwQmuQMTyKjfx7',
-  ]);
-  $list = json_decode(
-    curl_exec($curl),
-    true
-  );
-  curl_close($curl);
+  $list = cms_get_contents($api);
 
   foreach ($list['contents'] as $article) {
     file_put_contents(
