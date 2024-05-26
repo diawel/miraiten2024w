@@ -1,8 +1,4 @@
-<IfModule mod_rewrite.c>
-  SetEnvIf Referer ^https?://fundesign\.jp/ ref_ok
-  SetEnvIf Referer ^https?://localhost(:\d+)?/ ref_ok
-  order deny,allow
-  deny from all
-  allow from env=ref_ok
-  Header set Access-Control-Allow-Origin %{HTTP_HOST} env=ref_ok
-</IfModule>
+SetEnvIf Referer ^https?://fundesign\.jp/ ref_ok
+SetEnvIf Referer ^https?://localhost(:\d+)?/ ref_ok
+Order Allow,Deny
+Allow from env=ref_ok
